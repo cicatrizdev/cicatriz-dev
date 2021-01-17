@@ -16,7 +16,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            titleTemplate={`${data.site.siteMetadata.title}`}
             meta={[
               {
                 name: `description`,
@@ -33,22 +33,6 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 property: `og:type`,
                 content: `website`,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
               },
             ]
               .concat(

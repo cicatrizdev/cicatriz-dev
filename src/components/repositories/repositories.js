@@ -86,7 +86,7 @@ export default styled(Repositories)`
   .repositories__repo-link,
   .repositories_user-link a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.fontColor};
     display: flex;
     align-items: center;
   }

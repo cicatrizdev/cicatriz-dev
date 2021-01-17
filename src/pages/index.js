@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa"
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from "gatsby"
 import loadable from '@loadable/component'
@@ -53,16 +53,16 @@ const Home = ({ className, location }) => {
                 alt='user avatar'
               />
               <div className="social">
-                {siteConfig.social.github && <a className="social-link github" href={siteConfig.social.github}>
+                {siteConfig.social.github && <a className="social-link github" href={siteConfig.social.github} target='_blank' rel="noopener noreferrer">
                   <FaGithub className="social-icon" size="32" />
                 </a>}
-                {siteConfig.social.linkedin && <a className="social-link linkedin" href={siteConfig.social.linkedin}>
+                {siteConfig.social.linkedin && <a className="social-link linkedin" href={siteConfig.social.linkedin} target='_blank' rel="noopener noreferrer">
                   <FaLinkedin className="social-icon" size="32" />
                 </a>}
-                {siteConfig.social.twitter && <a className="social-link twitter" href={siteConfig.social.twitter}>
-                  <FaTwitter className="social-icon" size="32" />
+                {siteConfig.social.whatsapp && <a className="social-link whatsapp" href={`https://api.whatsapp.com/send?phone=${siteConfig.social.whatsapp}&text=Fala%2C+Cicatriz%21+Estou+entrando+em+contato+atrav%C3%A9s+do+seu+site.`} target='_blank' rel="noopener noreferrer">
+                  <FaWhatsapp className="social-icon" size="32" />
                 </a>}
-                {siteConfig.social.email && <a className="social-link email" href={`mailto:${siteConfig.social.email}`}>
+                {siteConfig.social.email && <a className="social-link email" href={`mailto:${siteConfig.social.email}`} target='_blank' rel="noopener noreferrer">
                   <FaEnvelope className="social-icon" size="32" />
                 </a>}
               </div>
@@ -70,7 +70,7 @@ const Home = ({ className, location }) => {
           </Row>
           <Row>
             <Col xs={4} sm={4}>
-              <About title='About' text={siteConfig.authorDescription}/>
+              <About title='Sobre mim' text={siteConfig.authorDescription}/>
             </Col>
             <Col xs={4} sm={4}>
               <Skills title='Skills' skills={siteConfig.skills} />
@@ -112,11 +112,11 @@ export default styled(Home)`
 
   .social-link {
     padding: 8px;
-    color: #555;
+    color: #000000;
   }
 
-  a.social-link.twitter:hover {
-    color: #1da1f2;
+  a.social-link.whatsapp:hover {
+    color: #25d366;
   }
 
   a.social-link.github:hover {

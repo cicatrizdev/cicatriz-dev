@@ -1,112 +1,88 @@
 module.exports = {
-  siteTitle: 'Hi! I\'m Francisco!',
-  siteDescription: `Create your online curriculum in just a few minutes with this starter`,
-  keyWords: ['gatsbyjs', 'react', 'curriculum'],
-  authorName: 'Francisco Santos',
-  twitterUsername: '_franciscodf',
-  githubUsername: 'santosfrancisco',
+  siteTitle: 'Pedro Mello | Cicatriz.DEV',
+  siteDescription: `Meu site pessoal para mantermos contato :)`,
+  keyWords: ['gatsbyjs', 'react', 'styled-components', 'cicatriz.dev'],
+  authorName: 'Pedro Mello',
+  githubUsername: 'pedrocmello',
   authorAvatar: '/images/avatar.jpeg',
-  authorDescription: `Developer, passionate about what I do. Always interested in how the sites were made, I started to study HTML by hobby. <br />
-    In 2012 I started working as a support technician and I approached the developers.
-    In 2015, I started to study C # and started to contribute with the team giving maintenance in an application in C # and .NET. <br />
-    I currently work as a frontend developer and mainly work with <strong>Javascript, NodeJS e React.</strong>`,
+  authorDescription: `Olá! Meu nome é Pedro, mais conhecido como Cicatriz :D 
+  <br />
+  <br />
+  Sou um desenvolvedor apaixonado por tecnologia e, principalmente, por desenvolvimento front-end.
+  <br />
+  <br />
+  Trabalho como <strong>engenheiro front-end</strong> na Riachuelo, e também sou <strong>professor tutor</strong> do IGTI para as turmas de desenvolvimento mobile.
+  Além da paixão pela tecnologia, também tenho um amor muito grande em passar conhecimento adiante. Seja por meio de uma palestra, de um curso/minicurso ou até mesmo uma mentoria 1-1, pode contar comigo! 
+  <br />
+  <br />
+  As tecnologias que mais utilizo são <strong>Javascript, React, React Native</strong> e <strong>Redux</strong>, mas tenho conhecimento em mais ferramentas e tecnologias como  <strong>Next.js, Node.js (Express), Flutter, PHP (Laravel/Lumen) </strong>e <strong>Python (Flask)</strong>. Se precisar de ajuda com <strong>Design de Interfaces</strong>, posso te ajudar com protótipos de <strong>baixa</strong> e <strong>alta</strong> fidelidade.`,
   skills: [
     {
-      name: 'HTML',
-      level: 70
-    },
-    {
-      name: 'CSS',
+      name: 'HTML/CSS',
       level: 60
     },
     {
       name: 'Javascript',
-      level: 50
-    },
-    {
-      name: 'NodeJs',
-      level: 40
+      level: 70
     },
     {
       name: 'React',
+      level: 65
+    },
+    {
+      name: 'Redux',
+      level: 45
+    },
+    {
+      name: 'React Native',
       level: 60
     },
     {
-      name: 'Git',
-      level: 70
+      name: 'Node',
+      level: 45
     },
-    /* more skills here */
+    {
+      name: 'Flutter',
+      level: 30
+    },
+    {
+      name: 'Design de Interfaces',
+      level: 50
+    },
   ],
   jobs: [
-    /* more jobs here */
     {
-      company: "Gympass",
-      begin: {
-        month: 'sep',
-        year: '2019'
-      },
-      duration: null,
-      occupation: "Frontend developer",
-      description: "I am part of the Corporate team, responsible for the development and maintenance of the employee management platform, giving more and more autonomy to partner companies."
-  
+      title: "Desenvolvimento",
+      type: 'coding',
+      description: "Mão na massa! Programar é minha paixão, então vou tirar sua ideia do papel (e planilhas) e tornar ela realidade. Utilizando as tecnologias de ponta do mercado, podemos ir desde uma landing page para seu produto, site pessoal, blog com CMS, ou aplicativo para smartphone."
     },  {
-      company: "Lendico",
-      begin: {
-        month: 'apr',
-        year: '2018'
-      },
-      duration: null,
-      occupation: "Frontend developer",
-      description: "I integrate the Frontend team responsible for developing and maintaining the online lending platform."
-  
+      title: "Design de Interfaces",
+      type: 'design',
+      description: "Qual o sentido de uma ideia que não agrega valor? Posso te ajudar com protótipos de baixa e alta fidelidade, utilizando softwares modernos para a construção e validação em tempo real."
     }, {
-      company: "Anapro",
-      begin: {
-        month: 'dec',
-        year: '2016'
-      },
-      duration: '1 yr e 5 mos',
-      occupation: "Fullstack developer",
-      description: "Development and maintenance, corrective and preventive, of web applications for the real estate market."
+      title: "Consultoria (SELO ANTI-COACH®)",
+      type: 'consultant',
+      description: "Não sou palestrinha, mas gosto muito de ajudar (principalmente quem tá começando). Pode me chamar pra falar na faculdade, evento de tecnologia, evento de empresa, evento informal (cerveja por sua conta). Também pode contar comigo para auxiliar a traçar um plano, entender o mercado crescente de tecnologia, aprender mais sobre determinada tecnologia ou colocar a internet para trabalhar para você. Afinal, se sua empresa/marca não está na internet, onde mais ela está?"
     }, {
-      company: "Anapro",
-      begin: {
-        month: 'set',
-        year: '2012'
-      },
-      duration: '4 yrs e 3 mos',
-      occupation: "Support Technician",
-      description: "Responsible for the implementation and parameterization of the system, training and customer support. Acting also in person in real estate launches guaranteeing the success and good use of the tool."
-  
+      title: "Mentoria 1-1",
+      type: 'mentor',
+      description: "Ao longo da carreira, passei pelos mais diversos tipos de empresas (startup, consultoria, fábrica de software, agência de marketing, banco e varejo) e trabalhei em produtos ainda mais diversificados. O que aprendi, pode ser o suficiente para você descobrir as coisas que gosta e que não gosta. Vamos desde os fundamentos e pilares do desenvolvimento web, até o desenvolvimento de projetos para seu portfólio. É uma oportunidade praticamente exclusiva, pois só faço a mentoria com uma pessoa por vez. Mas se tiver interesse, entre em contato para eu ajudar da melhor forma que estiver ao meu alcance."
     },
-  ],
-  portifolio: [
-    {
-      image: "/images/gatsby-starter-cv.png",
-      description: "Gatsby starter CV template",
-      url: "https://www.gatsbyjs.org/starters/santosfrancisco/gatsby-starter-cv/"
-    },
-    {
-      image: "/images/awesome-grid.png",
-      description: "Responsive grid for ReactJS",
-      url: "https://github.com/santosfrancisco/react-awesome-styled-grid"
-    },
-    /* more portifolio items here */
   ],
   social: {
-    twitter: "https://twitter.com/_franciscodf",
-    linkedin: "https://www.linkedin.com/in/santos-francisco",
-    github: "https://github.com/santosfrancisco",
-    email: "yoshi.df@gmail.com"
+    linkedin: "https://www.linkedin.com/in/pedro-c-mello",
+    github: "https://github.com/pedrocmello",
+    email: "contato@cicatriz.dev",
+    whatsapp: "5532999255105"
   },
-  siteUrl: 'https://santosfrancisco.github.io/gatsbystarter-cv',
-  pathPrefix: '/gatsby-starter-cv', // Note: it must *not* have a trailing slash.
-  siteCover: '/images/cover.jpeg',
-  googleAnalyticsId: 'UA-000000000-1',
+  siteUrl: 'https://cicatriz.dev',
+  pathPrefix: '/',
+  siteCover: '/images/cover.jpg',
+  googleAnalyticsId: 'G-V07973F3M6',
   background_color: '#ffffff',
-  theme_color: '#25303B',
+  theme_color: '#320335',
   fontColor: "#000000cc",
-  enableDarkmode: true, // If true, enables dark mode switch
+  enableDarkmode: true,
   display: 'minimal-ui',
   icon: 'src/assets/gatsby-icon.png',
   headerLinks: [
@@ -115,8 +91,8 @@ module.exports = {
       url: '/',
     },
     {
-      label: 'Portifolio',
-      url: '/portifolio',
+      label: 'Blog',
+      url: 'https://blog.cicatriz.dev',
     }
   ]
 }

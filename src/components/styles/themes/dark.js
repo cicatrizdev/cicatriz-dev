@@ -1,7 +1,8 @@
 export default {
   colors: {
-    background: "#212121",
-    primary: "#636363",
+    background: "#320335",
+    backgroundLighter: "#8F3985",
+    primary: "#25303B",
     fontColor: "#FFF",
   }
 }

@@ -92,6 +92,8 @@ const Header = ({ location, onChangeTheme, theme }) => {
               active={location.pathname === withPrefix(headerLink.url)}
               to={headerLink.url}
               key={`header-link-${i}`}
+              target={i === 0 ? '' : '_blank'}
+              rel='noreferrer noopener'
             >
               {headerLink.label}
             </HeaderLink>

@@ -3,28 +3,52 @@ import styled from 'styled-components'
 import { config } from 'react-awesome-styled-grid'
 import siteConfig from '../../../data/siteConfig'
 
+import coding from '../../assets/coding.svg';
+import design from '../../assets/design.svg';
+import mentor from '../../assets/mentor.svg';
+import consultant from '../../assets/consultant.svg';
+
+const StyledImg = styled.img`
+  margin-top: 8px
+`
+const IconSelector = jobType => {
+  switch (jobType) {
+    case 'coding':
+      return coding;
+      break;
+    case 'design':
+      return design;
+      break;
+    case 'mentor':
+      return mentor
+      break;
+    case 'consultant':
+      return consultant;
+      break;
+    default:
+      break;
+  }
+}
 const Timeline = ({ className }) => (
   <div className={className}>
-    <h1>Experience</h1>
+    <h1>Serviços</h1>
     {siteConfig.jobs && siteConfig.jobs.map(job => (
       <article 
-        key={job.begin.month + job.begin.year} 
+        key={job.title} 
         className='timeline__item animate-on-scroll'
       >
         <div className="inner">
           <span className="timeline__date">
-            <span className="timeline__month">{job.begin.month}</span>
-            <span className="timeline__year">{job.begin.year}</span>
+            <StyledImg 
+              src={IconSelector(job.type)}
+              height="40"
+              width="50"
+            />
           </span>
           <div className="timeline__card">
             <h2 className='timeline__card-title'>
-              {job.company
-                ? `${job.occupation} at ${job.company}`
-                : `${job.occupation}`} 
+              {job.title}
               <br />
-              <small className='timeline__card-title--small'>
-                ({job.duration || 'present'})
-              </small>
             </h2>
             <p>{job.description}</p>
           </div>

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-cv",
+  "name": "cicatriz-dev",
   "private": true,
-  "description": "A simple starter to get up and developing your digital curriculum with GatsbyJS",
-  "version": "0.0.1",
-  "author": "Francisco Santos <yoshi.df@gmail.com>",
+  "description": "My personal website :)",
+  "version": "1.0.0",
+  "author": "Pedro Mello <contato@cicatriz.dev>",
   "dependencies": {
     "@loadable/component": "5.12.0",
     "babel-plugin-styled-components": "1.10.6",
@@ -46,9 +46,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/santosfrancisco/gatsby-starter-cv"
+    "url": "https://github.com/pedrocmello/cicatriz-dev"
   },
   "bugs": {
-    "url": "https://github.com/santosfrancisco/gatsby-starter-cv/issues"
+    "url": "https://github.com/pedrocmello/cicatriz-dev/issues"
   }
 }
