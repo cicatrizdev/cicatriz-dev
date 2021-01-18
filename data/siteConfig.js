@@ -82,7 +82,7 @@ module.exports = {
   background_color: '#ffffff',
   theme_color: '#320335',
   fontColor: "#000000cc",
-  enableDarkmode: true,
+  enableDarkmode: false,
   display: 'minimal-ui',
   icon: 'src/assets/gatsby-icon.png',
   headerLinks: [
