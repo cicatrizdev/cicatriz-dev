@@ -1,125 +1,120 @@
 import React from "react";
-import jsonFetch from "simple-json-fetch";
-import styled from 'styled-components'
-import { GoStar, GoRepoForked, GoLinkExternal } from 'react-icons/go'
-import siteConfig from '../../../data/siteConfig'
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import styled from "styled-components";
+import emailjs from "emailjs-com";
 
-import Loader from '../loader'
+import * as Yup from 'yup';
 
-const endpoint =
-  `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&sort=updated&per_page=5&page=1`
+const schema = Yup.object().shape({
+  contactName: Yup.string().min(2, 'Nome muito curto :(').required('* Nome obrigatório'),
+  contactEmail: Yup.string().email('Email inválido!').required('* Email obrigatório')
+})
 
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin-bottom: 12px;
 
-class Repositories extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      repos: [],
-      status: 'loading'
-    }
+  input { 
+    height: 40px;
+    padding: 12px;
+  };
+
+  textarea { 
+    padding: 12px;
+    resize: none;
+  };
+`;
+
+const StyledErrorMessage = styled(ErrorMessage)`
+  font-size: 10px;
+  color: red;
+`;
+
+const ResponseSpan = styled.span`
+  display: flex;
+  margin-top: 12px;
+`;
+
+const StyledButton = styled.button`
+  width: 120px;
+  background-color: #320335;
+  color: #FFFFFF;
+  border: 2px solid #320335;
+
+  :hover {
+    background-color: #8F3985;
+    border: 2px solid #8F3985;
   }
-  async componentDidMount () {
-    const repos = await jsonFetch(endpoint);
-    if (repos.json && repos.json.length) {
-      this.setState({ repos: repos.json, status: 'ready' })
-    }
-  }
-  render () {
-    const { status } = this.state
-    return (
-      <div className={this.props.className}>
-        <h2>Latest repositories on Github</h2>
-        {status === "loading" && <div className='repositories__loader'><Loader /></div>}
-        {status === "ready" &&
-          this.state.repos && (
-            <React.Fragment>
-              <div className="repositories__content">
-                {this.state.repos.map(repo => (
-                  <React.Fragment key={repo.name}>
-                    <div className="repositories__repo">
-                      <a 
-                        className='repositories__repo-link' 
-                        href={repo.html_url}
-                        target="_blank"
-                      >
-                        <strong>{repo.name}</strong>
-                      </a>
-                      <div>{repo.description}</div>
-                      <div className="repositories__repo-date">
-                        Updated: {new Date(repo.updated_at).toUTCString()}
-                      </div>
-                      <div className="repositories__repo-star">
-                        {repo.fork && <GoRepoForked />}
-                        <GoStar /> {repo.stargazers_count}
-                      </div>
-                    </div>
-                    <hr />
-                  </React.Fragment>
-                ))}
-              </div>
-              <div className="repositories_user-link">
-                <a 
-                  href={`https://github.com/${siteConfig.githubUsername}`}
-                  target="_blank"
-                >
-                  See all my repositories
-                  <GoLinkExternal style={{ marginLeft: 8 }} />
-                </a>
-              </div>
-            </React.Fragment>
-          )}
-      </div>
+`
+const Repositories = () => {
+  const [ formStatus, setFormStatus ] = React.useState('');
+  const [ isLoading, setIsLoading ] = React.useState(false);
+
+  const sendEmail = (values) => {
+    setIsLoading(true);
+    emailjs.send(
+      'cicatriz_dev_form', 
+      'cicatriz_dev_template', 
+      values, 
+      'user_SG6wsZAYHAT5ud0eGZGKH'
+    ).then(
+      result => {
+        setFormStatus(`E-mail enviado :)`)
+        setIsLoading(false);
+      }
+    ).catch(
+      err => {
+        setFormStatus(`E-mail falhou, tente novamente :(`)
+        setIsLoading(false)
+      }
     )
   }
+  return (
+    <div>
+      <h1>Vamos trabalhar juntos?</h1>
+      <p>
+        Use esse form para entrar em contato comigo e conversarmos melhor. Sinta-se à vontade para me contactar através de qualquer uma das minhas redes sociais. Espero trabalharmos juntos logo :)
+      </p>
+      <Formik
+        validationSchema={schema}
+        initialValues={{ 
+          contactName: '',
+          contactEmail: '',
+          contactMessage: ''
+        }}
+        onSubmit={(values, actions) => {
+          console.log(values);
+          sendEmail(values, actions)
+          actions.setSubmitting(false);
+          actions.resetForm();
+        }}
+      >
+        {() => (
+          <Form>
+            <InputWrapper>
+              <label htmlFor="contactName">Seu nome</label>
+              <Field placeholder="Ex: Edson Arantes" id="contactName" name="contactName"/>
+              <StyledErrorMessage component="span" name="contactName" />
+            </InputWrapper>
+            <InputWrapper>
+              <label htmlFor="contactEmail">Seu melhor email</label>
+              <Field placeholder="Ex: edson.arantes@email.com" id="contactEmail" name="contactEmail" type="email"/>
+              <StyledErrorMessage component="span" name="contactEmail" />
+            </InputWrapper>
+            <InputWrapper>
+              <label htmlFor="contactMessage">Mensagem bem bacana</label>
+              <Field component={() => <textarea placeholder="Ex: Fala, Cica! Bora trabalhar juntos?"></textarea>} id="contactMessage" name="contactMessage" type="text"/>
+              <StyledErrorMessage component="span" name="contactMessage" />
+            </InputWrapper>
+            <StyledButton disable={isLoading} type="submit">{isLoading ? 'Enviando...' : 'Enviar'}</StyledButton>
+            <ResponseSpan>{formStatus}</ResponseSpan>
+          </Form>
+        )}
+      </Formik>
+    </div>
+  )
 }
 
-export default styled(Repositories)`
-  position: relative;
-  .repositories__content {
-    margin-bottom: 40px;
-  }
-
-  .repositories__repo {
-    position: relative;
-  }
-
-  .repositories__repo-link,
-  .repositories_user-link a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.fontColor};
-    display: flex;
-    align-items: center;
-  }
-
-  .repositories_user-link {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .repositories__repo-date {
-    font-size: 10px;
-  }
-
-  .repositories__repo-star {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    svg {
-      margin-right: 4px;
-    }
-  }
-
-  .repositories__loader {
-    display: flex;
-  }
-
-  hr {
-    margin-top: 16px;
-    background-color: ${({ theme }) => theme.colors.fontColor};
-    opacity: .2;
-  }
-
-`
-
+export default Repositories;

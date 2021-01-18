@@ -29,7 +29,7 @@ const Footer = ({ className }) => {
   } = siteConfig.social
   return (
     <footer className={className}>
-      Desenvolvido com 💙 {` por ${siteConfig.authorName} © ${new Date().getFullYear()} `}
+      <div>Desenvolvido com 💙 {` por ${siteConfig.authorName}`}</div>
       <div>
         <StyledImg href="https://www.buymeacoffee.com/cicatr1z" target="_blank" rel="noopener noreferrer">
           <img
@@ -52,6 +52,10 @@ export default styled(Footer)`
   margin: 0 auto;
   padding: 0 24px;
   background: ${({ theme }) => theme.colors.background};
+
+  div {
+    margin-bottom: 16px;
+  }
 
   ${props => config(props).media.sm`
     flex-direction: row;
