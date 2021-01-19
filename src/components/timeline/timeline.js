@@ -129,15 +129,7 @@ export default styled(Timeline)`
     border-radius: 3px 3px 0 0;
     position: relative;
   }
-  .timeline__card-title:after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 30%;
-    width: 10px; 
-    height: 10px;
-    transform: rotate(-45deg);
-  }
+
   .timeline__item div.inner p {
     padding: 15px;
     margin: 0;
@@ -174,6 +166,16 @@ export default styled(Timeline)`
   .timeline__item div.inner {
     width: 40%;
     margin: 5px 0 0 0;
+  }
+
+  .timeline__card-title:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 30%;
+    width: 10px; 
+    height: 10px;
+    transform: rotate(-45deg);
   }
 
   .timeline__item div.inner h2:after {

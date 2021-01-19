@@ -75,7 +75,7 @@ const Repositories = () => {
     <div>
       <h1>Vamos trabalhar juntos?</h1>
       <p>
-        Use esse form para entrar em contato comigo e conversarmos melhor. Sinta-se à vontade para me contactar através de qualquer uma das minhas redes sociais. Espero trabalharmos juntos logo :)
+        Use esse form para entrar em contato comigo e conversarmos melhor. Você também pode me contactar através de qualquer uma das minhas redes sociais, no topo do site. Espero que a gente trabalhe juntos num projeto bem legal :)
       </p>
       <Formik
         validationSchema={schema}
@@ -95,17 +95,32 @@ const Repositories = () => {
           <Form>
             <InputWrapper>
               <label htmlFor="contactName">Seu nome</label>
-              <Field placeholder="Ex: Edson Arantes" id="contactName" name="contactName"/>
+              <Field 
+                placeholder="Ex: Edson Arantes" 
+                id="contactName" 
+                name="contactName"
+                type="text"
+              />
               <StyledErrorMessage component="span" name="contactName" />
             </InputWrapper>
             <InputWrapper>
               <label htmlFor="contactEmail">Seu melhor email</label>
-              <Field placeholder="Ex: edson.arantes@email.com" id="contactEmail" name="contactEmail" type="email"/>
+              <Field 
+                placeholder="Ex: edson.arantes@email.com" 
+                id="contactEmail" 
+                name="contactEmail" 
+                type="email"
+              />
               <StyledErrorMessage component="span" name="contactEmail" />
             </InputWrapper>
             <InputWrapper>
               <label htmlFor="contactMessage">Mensagem bem bacana</label>
-              <Field component={() => <textarea placeholder="Ex: Fala, Cica! Bora trabalhar juntos?"></textarea>} id="contactMessage" name="contactMessage" type="text"/>
+              <Field 
+                component={() => <textarea placeholder="Ex: Fala, Cica! Bora trabalhar juntos?"></textarea>} 
+                id="contactMessage" 
+                name="contactMessage" 
+                type="text"
+              />
               <StyledErrorMessage component="span" name="contactMessage" />
             </InputWrapper>
             <StyledButton disable={isLoading} type="submit">{isLoading ? 'Enviando...' : 'Enviar'}</StyledButton>
