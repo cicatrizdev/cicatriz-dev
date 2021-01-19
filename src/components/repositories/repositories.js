@@ -20,11 +20,6 @@ const InputWrapper = styled.div`
     height: 40px;
     padding: 12px;
   };
-
-  textarea { 
-    padding: 12px;
-    resize: none;
-  };
 `;
 
 const StyledErrorMessage = styled(ErrorMessage)`
@@ -85,7 +80,6 @@ const Repositories = () => {
           contactMessage: ''
         }}
         onSubmit={(values, actions) => {
-          console.log(values);
           sendEmail(values, actions)
           actions.setSubmitting(false);
           actions.resetForm();
@@ -116,7 +110,7 @@ const Repositories = () => {
             <InputWrapper>
               <label htmlFor="contactMessage">Mensagem bem bacana</label>
               <Field 
-                component={() => <textarea placeholder="Ex: Fala, Cica! Bora trabalhar juntos?"></textarea>} 
+                placeholder="Ex: Fala, Cica! Bora trabalhar juntos?" 
                 id="contactMessage" 
                 name="contactMessage" 
                 type="text"
