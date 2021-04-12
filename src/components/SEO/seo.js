@@ -52,9 +52,23 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
+  lang: `pt-br`,
+  meta: [
+    'Desenvolvimento de Juiz de Fora para o mundo. Sou desenvolvedor e professor, ajudando programadores a dar os primeiros passos na carreira',
+  ],
+  keywords: [
+    'cicatriz',
+    'dev',
+    'front-end',
+    'frontend',
+    'programador',
+    'programadores',
+    'juiz de fora',
+    'jf',
+    'desenvolvedor',
+    'web',
+    'design',
+  ],
 }
 
 SEO.propTypes = {
