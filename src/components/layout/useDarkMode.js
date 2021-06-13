@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react'
 
-export const isBrowser = () => typeof window !== "undefined"
+export const isBrowser = () => typeof window !== 'undefined'
 
 export const useDarkMode = () => {
   let websiteTheme
-  if (isBrowser()) {
-    websiteTheme = window.__theme
-  }
+  // if (isBrowser()) {
+  //   websiteTheme = window.__theme
+  // }
   const [theme, setTheme] = useState(websiteTheme)
 
   const toggleTheme = () => {
-    window.__setPreferredTheme(websiteTheme === 'dark' ? 'light' : 'dark')
+    window.__setPreferredTheme('light')
   }
   useEffect(() => {
-    setTheme(window.__theme)
+    setTheme('light')
     window.__onThemeChange = () => {
-      setTheme(window.__theme)
+      setTheme('light')
     }
   }, [])
   return [theme, toggleTheme]

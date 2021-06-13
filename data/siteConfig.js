@@ -11,43 +11,43 @@ module.exports = {
   Sou um desenvolvedor apaixonado por tecnologia e, principalmente, por desenvolvimento front-end.
   <br />
   <br />
-  Trabalho como <strong>engenheiro front-end</strong> na Riachuelo, e também sou <strong>professor tutor</strong> do IGTI para as turmas de desenvolvimento mobile.
-  Além da paixão pela tecnologia, também tenho um amor muito grande em passar conhecimento adiante. Seja por meio de uma palestra, de um curso/minicurso ou até mesmo uma mentoria 1-1, pode contar comigo! 
+  Trabalho como <strong>engenheiro front-end</strong> na Riachuelo, e também sou <strong>professor</strong> do IGTI para as turmas de desenvolvimento mobile e programador de software iniciante.
+  Além da paixão pela tecnologia, também tenho um amor muito grande em passar conhecimento adiante. Seja por meio de uma palestra, treinamentos, curso/minicurso ou até mesmo uma mentoria 1-1, pode contar comigo! 
   <br />
   <br />
-  As tecnologias que mais utilizo são <strong>Javascript, React, React Native</strong> e <strong>Redux</strong>, mas tenho conhecimento em mais ferramentas e tecnologias como  <strong>Next.js, Node.js (Express), Flutter, PHP (Laravel/Lumen) </strong>e <strong>Python (Flask)</strong>. Se precisar de ajuda com <strong>Design de Interfaces</strong>, posso te ajudar com protótipos de <strong>baixa</strong> e <strong>alta</strong> fidelidade.`,
+  As tecnologias que mais utilizo são <strong>Javascript/TypeScript, React, React Native</strong> e <strong>Redux</strong>, mas tenho conhecimento em mais ferramentas e tecnologias como  <strong>Next.js, Gatsby, Node.js (Express), Java (Android Nativo), Flutter, PHP (Laravel/Lumen) </strong>e <strong>Python (Flask)</strong>. Se precisar de ajuda com <strong>Design de Interfaces</strong>, posso te ajudar com protótipos de <strong>baixa</strong> e <strong>alta</strong> fidelidade.`,
   skills: [
     {
       name: 'HTML/CSS',
-      level: 60,
-    },
-    {
-      name: 'Javascript',
       level: 70,
     },
     {
+      name: 'Javascript',
+      level: 75,
+    },
+    {
       name: 'React',
-      level: 65,
+      level: 70,
     },
     {
       name: 'Redux',
-      level: 45,
+      level: 55,
     },
     {
       name: 'React Native',
-      level: 60,
+      level: 65,
     },
     {
       name: 'Node',
-      level: 45,
+      level: 50,
     },
     {
       name: 'Flutter',
-      level: 30,
+      level: 40,
     },
     {
       name: 'Design de Interfaces',
-      level: 50,
+      level: 55,
     },
   ],
   jobs: [
@@ -80,6 +80,7 @@ module.exports = {
     linkedin: 'https://www.linkedin.com/in/pedro-c-mello',
     github: 'https://github.com/pedrocmello',
     email: 'contato@cicatriz.dev',
+    instagram: 'https://instagram.com/cicatriz.dev',
     whatsapp: '5532999255105',
   },
   siteUrl: 'https://cicatriz.dev',
