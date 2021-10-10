@@ -11,7 +11,6 @@ import {
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
-// import heroImg from '../assets/cover.gif'
 
 import Hero from '../components/hero'
 import SEO from '../components/SEO'
@@ -30,26 +29,26 @@ const Separator = styled.hr`
   opacity: 0.2;
 `
 
-// console.log(
-//   `
-//   ___
-//   |_|
-//    |._
-//    |'."-._.-""--.-"-.__.-'/
-//    |  |                  (
-//    |   |   Keep moving    )
-//    |   |     forward!    /
-//    |  /                 /
-//    |.'                 (
-//    |.-"-.__.-""-.__.-"-.)
-//    |
-//    |
-//    |
-//   ------------------------
-//  / May the X be with you! |
-// /                         |
-//   `
-// )
+console.log(
+  `
+  ___
+  |_|
+   |._
+   |'."-._.-""--.-"-.__.-'/
+   |  |                  (
+   |   |   Keep moving    )
+   |   |     forward!    /
+   |  /                 /
+   |.'                 (
+   |.-"-.__.-""-.__.-"-.)
+   |
+   |
+   |
+  ------------------------
+ / May the X be with you! |
+/                         |
+  `
+)
 
 const Home = ({ className, location }) => {
   // validate siteConfig settings
