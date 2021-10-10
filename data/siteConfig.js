@@ -1,79 +1,78 @@
 module.exports = {
   siteTitle: 'Pedro Mello | Cicatriz.DEV',
-  siteDescription: `Meu site pessoal para mantermos contato :)`,
+  siteDescription: `My personal website, let's keep in touch :)`,
   keyWords: ['gatsbyjs', 'react', 'styled-components', 'cicatriz.dev'],
   authorName: 'Pedro Mello',
   githubUsername: 'pedrocmello',
   authorAvatar: '/images/avatar.jpeg',
-  authorDescription: `Olá! Meu nome é Pedro, mais conhecido como Cicatriz :D 
+  authorDescription: `Howdy! I'm Pedro, a mobile/front-end engineer from Brazil. 
   <br />
   <br />
-  Sou um desenvolvedor apaixonado por tecnologia e, principalmente, por desenvolvimento front-end.
+  I'm passionate about creating beautiful and functional web/mobile applications. I'm a self-taught developer and I'm always looking for new challenges and opportunities.
   <br />
   <br />
-  Trabalho como <strong>engenheiro front-end</strong> na Riachuelo, e também sou <strong>professor</strong> do IGTI para as turmas de desenvolvimento mobile e programador de software iniciante.
-  Além da paixão pela tecnologia, também tenho um amor muito grande em passar conhecimento adiante. Seja por meio de uma palestra, treinamentos, curso/minicurso ou até mesmo uma mentoria 1-1, pode contar comigo! 
+  I have a passion for learning new technologies and I love to share my knowledge. Mentoring and helping others to learn is my favorite thing to do.
   <br />
   <br />
-  As tecnologias que mais utilizo são <strong>Javascript/TypeScript, React, React Native</strong> e <strong>Redux</strong>, mas tenho conhecimento em mais ferramentas e tecnologias como  <strong>Next.js, Gatsby, Node.js (Express), Java (Android Nativo), Flutter, PHP (Laravel/Lumen) </strong>e <strong>Python (Flask)</strong>. Se precisar de ajuda com <strong>Design de Interfaces</strong>, posso te ajudar com protótipos de <strong>baixa</strong> e <strong>alta</strong> fidelidade.`,
+  My stack is mostly Javascript/TypeScript, with a focus on React and React Native. I'm also familiar with Node.js, Express, Android, Flutter and UI Design.
+  <br />
+  <br />
+  `,
   skills: [
     {
       name: 'HTML/CSS',
-      level: 70,
-    },
-    {
-      name: 'Javascript',
       level: 75,
     },
     {
+      name: 'Javascript/TypeScript',
+      level: 85,
+    },
+    {
       name: 'React',
-      level: 70,
+      level: 80,
     },
     {
       name: 'Redux',
-      level: 55,
+      level: 75,
     },
     {
       name: 'React Native',
-      level: 65,
+      level: 80,
     },
     {
       name: 'Node',
-      level: 50,
+      level: 55,
     },
     {
       name: 'Flutter',
       level: 40,
     },
     {
-      name: 'Design de Interfaces',
+      name: 'UI Design',
       level: 55,
     },
   ],
   jobs: [
     {
-      title: 'Desenvolvimento',
+      title: 'Development',
       type: 'coding',
-      description:
-        'Mão na massa! Programar é minha paixão, então vou tirar sua ideia do papel (e planilhas) e tornar ela realidade. Utilizando as tecnologias de ponta do mercado, podemos ir desde uma landing page para seu produto, site pessoal, blog com CMS, ou aplicativo para smartphone.',
+      description: `
+        Programming is my passion. I love to create new things and I love to learn new things. If you need a developer to create your web and/or mobile app, I'm your guy.
+      `,
     },
     {
-      title: 'Design de Interfaces',
-      type: 'design',
-      description:
-        'Qual o sentido de uma ideia que não agrega valor? Posso te ajudar com protótipos de baixa e alta fidelidade, utilizando softwares modernos para a construção e validação em tempo real.',
-    },
-    {
-      title: 'Consultoria (SELO ANTI-COACH®)',
+      title: 'Consultant',
       type: 'consultant',
-      description:
-        'Não sou palestrinha, mas gosto muito de ajudar (principalmente quem tá começando). Pode me chamar pra falar na faculdade, evento de tecnologia, evento de empresa, evento informal (cerveja por sua conta). Também pode contar comigo para auxiliar a traçar um plano, entender o mercado crescente de tecnologia, aprender mais sobre determinada tecnologia ou colocar a internet para trabalhar para você. Afinal, se sua empresa/marca não está na internet, onde mais ela está?',
+      description: `
+        I help development teams to build better products. I can help you to create a better product, or help you to improve your current one. I offer a wide range of services, from team training to code reviews.
+      `,
     },
     {
-      title: 'Mentoria 1-1',
+      title: 'Mentorship',
       type: 'mentor',
-      description:
-        'Ao longo da carreira, passei pelos mais diversos tipos de empresas (startup, consultoria, fábrica de software, agência de marketing, banco e varejo) e trabalhei em produtos ainda mais diversificados. O que aprendi, pode ser o suficiente para você descobrir as coisas que gosta e que não gosta. Vamos desde os fundamentos e pilares do desenvolvimento web, até o desenvolvimento de projetos para seu portfólio. É uma oportunidade praticamente exclusiva, pois só faço a mentoria com uma pessoa por vez. Mas se tiver interesse, entre em contato para eu ajudar da melhor forma que estiver ao meu alcance.',
+      description: `
+        Mentoring is my favorite thing to do. I love to help others to learn new things and I love to share my knowledge. I have a 1:1 mentorship program with a few developers from the community. If you want to learn something new or want to improve your skills, send me a message.
+      `,
     },
   ],
   social: {
@@ -85,22 +84,18 @@ module.exports = {
   },
   siteUrl: 'https://cicatriz.dev',
   pathPrefix: '/',
-  siteCover: '/images/cover.jpg',
+  siteCover: '/images/cover.gif',
   googleAnalyticsId: 'G-V07973F3M6',
   background_color: '#ffffff',
   theme_color: '#320335',
   fontColor: '#000000cc',
   enableDarkmode: false,
   display: 'minimal-ui',
-  icon: 'src/assets/gatsby-icon.png',
+  icon: 'src/assets/favicon.ico',
   headerLinks: [
     {
       label: 'Home',
       url: '/',
-    },
-    {
-      label: 'Medium',
-      url: 'https://medium.com/@cicatrizdev',
     },
   ],
 }

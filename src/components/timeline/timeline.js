@@ -3,63 +3,56 @@ import styled from 'styled-components'
 import { config } from 'react-awesome-styled-grid'
 import siteConfig from '../../../data/siteConfig'
 
-import coding from '../../assets/coding.svg';
-import design from '../../assets/design.svg';
-import mentor from '../../assets/mentor.svg';
-import consultant from '../../assets/consultant.svg';
+import coding from '../../assets/coding.svg'
+import design from '../../assets/design.svg'
+import mentor from '../../assets/mentor.svg'
+import consultant from '../../assets/consultant.svg'
 
 const StyledImg = styled.img`
-  margin-top: 8px
+  margin-top: 8px;
 `
 const IconSelector = jobType => {
   switch (jobType) {
     case 'coding':
-      return coding;
-      break;
+      return coding
+      break
     case 'design':
-      return design;
-      break;
+      return design
+      break
     case 'mentor':
       return mentor
-      break;
+      break
     case 'consultant':
-      return consultant;
-      break;
+      return consultant
+      break
     default:
-      break;
+      break
   }
 }
 const Timeline = ({ className }) => (
   <div className={className}>
-    <h1>Serviços</h1>
-    {siteConfig.jobs && siteConfig.jobs.map(job => (
-      <article 
-        key={job.title} 
-        className='timeline__item animate-on-scroll'
-      >
-        <div className="inner">
-          <span className="timeline__date">
-            <StyledImg 
-              src={IconSelector(job.type)}
-              height="40"
-              width="50"
-            />
-          </span>
-          <div className="timeline__card">
-            <h2 className='timeline__card-title'>
-              {job.title}
-              <br />
-            </h2>
-            <p>{job.description}</p>
+    <h1>Services</h1>
+    {siteConfig.jobs &&
+      siteConfig.jobs.map(job => (
+        <article key={job.title} className="timeline__item animate-on-scroll">
+          <div className="inner">
+            <span className="timeline__date">
+              <StyledImg src={IconSelector(job.type)} height="40" width="50" />
+            </span>
+            <div className="timeline__card">
+              <h2 className="timeline__card-title">
+                {job.title}
+                <br />
+              </h2>
+              <p>{job.description}</p>
+            </div>
           </div>
-        </div>
-      </article>
-    ))}
+        </article>
+      ))}
   </div>
 )
 
 export default styled(Timeline)`
-
   position: relative;
   :before {
     content: '';
@@ -138,7 +131,7 @@ export default styled(Timeline)`
     color: ${({ theme }) => theme.colors.fontColor};
     border-radius: 0 0 6px 6px;
   }
-  .timeline__item:nth-child(2n+2) div.inner {
+  .timeline__item:nth-child(2n + 2) div.inner {
     float: right;
     .timeline__card {
       transform: translate(50%);
@@ -157,7 +150,7 @@ export default styled(Timeline)`
 
   .timeline__item.is-visible div.inner {
     .timeline__card {
-      transition: transform .8s ease-in;
+      transition: transform 0.8s ease-in;
       transform: translate(0);
     }
   }

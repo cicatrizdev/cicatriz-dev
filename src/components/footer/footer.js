@@ -1,41 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
-import { config } from 'react-awesome-styled-grid';
+import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'
+import { config } from 'react-awesome-styled-grid'
 import siteConfig from '../../../data/siteConfig'
 
-import BMCoffee from '../../assets/buymeacoffee.svg';
+import BMCoffee from '../../assets/buymeacoffee.svg'
 
 const Link = styled(({ className, icon: Icon, color, ...props }) => (
-  <a 
-    className={className}
-    target='_blank'
-    rel="noopener noreferrer"
-    {...props}
-  >
+  <a className={className} target="_blank" rel="noopener noreferrer" {...props}>
     <Icon color={color} size={32} />
   </a>
 )).attrs(props => ({ color: props.theme.colors.fontColor }))`
   & + & {
     margin-left: 24px;
   }
-`;
+`
 
 const Footer = ({ className }) => {
-  const {
-    twitter,
-    linkedin,
-    github,
-  } = siteConfig.social
+  const { twitter, linkedin, github } = siteConfig.social
   return (
     <footer className={className}>
-      <div>Desenvolvido com 💙 {` por ${siteConfig.authorName}`}</div>
+      <div>Developed with 💙 {` by ${siteConfig.authorName}`}</div>
       <div>
-        <StyledImg href="https://www.buymeacoffee.com/cicatr1z" target="_blank" rel="noopener noreferrer">
-          <img
-            src={BMCoffee}
-            width="150"
-          />
+        <StyledImg
+          href="https://www.buymeacoffee.com/cicatr1z"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={BMCoffee} width="150" />
         </StyledImg>
       </div>
     </footer>
@@ -43,7 +35,7 @@ const Footer = ({ className }) => {
 }
 
 export default styled(Footer)`
-  min-height: 93px; 
+  min-height: 93px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
@@ -60,10 +52,10 @@ export default styled(Footer)`
   ${props => config(props).media.sm`
     flex-direction: row;
   `}
-`;
+`
 
 export const StyledImg = styled.a`
-  margin-right: 24px;  
+  margin-right: 24px;
 
   img {
     margin-bottom: -10px;
@@ -72,7 +64,7 @@ export const StyledImg = styled.a`
     border-radius: 8px;
 
     :hover {
-      background: #25303B
+      background: #25303b;
     }
   }
-`;
+`

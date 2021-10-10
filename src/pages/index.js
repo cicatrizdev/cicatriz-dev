@@ -29,6 +29,27 @@ const Separator = styled.hr`
   opacity: 0.2;
 `
 
+console.log(
+  `
+  ___
+  |_|
+   |._
+   |'."-._.-""--.-"-.__.-'/
+   |  |                  (
+   |   |   Keep moving    )
+   |   |     forward!    /
+   |  /                 /
+   |.'                 (
+   |.-"-.__.-""-.__.-"-.)
+   |
+   |
+   |
+  ------------------------
+ / May the X be with you! |
+/                         |
+  `
+)
+
 const Home = ({ className, location }) => {
   // validate siteConfig settings
   if (siteConfig.googleAnalyticsId === 'UA-000000000-1') {
@@ -77,7 +98,7 @@ const Home = ({ className, location }) => {
                 )}
                 {siteConfig.social.instagram && (
                   <a
-                    className="social-link "
+                    className="social-link instagram"
                     href={siteConfig.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -110,7 +131,7 @@ const Home = ({ className, location }) => {
           </Row>
           <Row>
             <Col xs={4} sm={4}>
-              <About title="Sobre mim" text={siteConfig.authorDescription} />
+              <About title="About" text={siteConfig.authorDescription} />
             </Col>
             <Col xs={4} sm={4}>
               <Skills title="Skills" skills={siteConfig.skills} />

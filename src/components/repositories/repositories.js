@@ -7,11 +7,11 @@ import * as Yup from 'yup'
 
 const schema = Yup.object().shape({
   contactName: Yup.string()
-    .min(2, 'Nome muito curto :(')
-    .required('* Nome obrigatório'),
+    .min(2, 'Short name :(')
+    .required('* Required'),
   contactEmail: Yup.string()
-    .email('Email inválido!')
-    .required('* Email obrigatório'),
+    .email('Invalid email :(')
+    .required('* Required'),
 })
 
 const InputWrapper = styled.div`
@@ -33,6 +33,7 @@ const StyledErrorMessage = styled(ErrorMessage)`
 
 const ResponseSpan = styled.span`
   display: flex;
+  font-size: 22px;
   margin-top: 12px;
 `
 
@@ -65,22 +66,20 @@ const Repositories = () => {
         'user_SG6wsZAYHAT5ud0eGZGKH'
       )
       .then(result => {
-        setFormStatus(`E-mail enviado :)`)
+        setFormStatus(`E-mail sent :)`)
         setIsLoading(false)
       })
       .catch(err => {
-        setFormStatus(`E-mail falhou, tente novamente :(`)
+        setFormStatus(`Ooops! Something went wrong :( try again`)
         setIsLoading(false)
       })
   }
   return (
     <div>
-      <h1>Vamos trabalhar juntos?</h1>
+      <h1>Let's work together?</h1>
       <p>
-        Use esse form para entrar em contato comigo e conversarmos melhor. Você
-        também pode me contactar através de qualquer uma das minhas redes
-        sociais, no topo do site. Espero que a gente trabalhe juntos num projeto
-        bem legal :)
+        Use the form below to send me an email and I'll get back to you as soon
+        as I can. I hope we can work together in an awesome project!
       </p>
       <Formik
         validationSchema={schema}
@@ -98,7 +97,7 @@ const Repositories = () => {
         {() => (
           <Form>
             <InputWrapper>
-              <label htmlFor="contactName">Seu nome</label>
+              <label htmlFor="contactName">Full name</label>
               <Field
                 placeholder="Ex: Edson Arantes"
                 id="contactName"
@@ -108,7 +107,7 @@ const Repositories = () => {
               <StyledErrorMessage component="span" name="contactName" />
             </InputWrapper>
             <InputWrapper>
-              <label htmlFor="contactEmail">Seu melhor email</label>
+              <label htmlFor="contactEmail">Your best e-mail</label>
               <Field
                 placeholder="Ex: edson.arantes@email.com"
                 id="contactEmail"
@@ -118,9 +117,9 @@ const Repositories = () => {
               <StyledErrorMessage component="span" name="contactEmail" />
             </InputWrapper>
             <InputWrapper>
-              <label htmlFor="contactMessage">Mensagem bem bacana</label>
+              <label htmlFor="contactMessage">Nice message to me :)</label>
               <Field
-                placeholder="Ex: Fala, Cica! Bora trabalhar juntos?"
+                placeholder="Ex: Hey! Let's drink a beer? 🍺"
                 id="contactMessage"
                 name="contactMessage"
                 type="text"
@@ -128,7 +127,7 @@ const Repositories = () => {
               <StyledErrorMessage component="span" name="contactMessage" />
             </InputWrapper>
             <StyledButton disable={isLoading} type="submit">
-              {isLoading ? 'Enviando...' : 'Enviar'}
+              {isLoading ? 'Sending...' : 'Send'}
             </StyledButton>
             <ResponseSpan>{formStatus}</ResponseSpan>
           </Form>
