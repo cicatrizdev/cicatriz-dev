@@ -84,14 +84,14 @@ module.exports = {
   },
   siteUrl: 'https://cicatriz.dev',
   pathPrefix: '/',
-  siteCover: '/images/cover.jpg',
+  siteCover: '/images/cover.gif',
   googleAnalyticsId: 'G-V07973F3M6',
   background_color: '#ffffff',
   theme_color: '#320335',
   fontColor: '#000000cc',
   enableDarkmode: false,
   display: 'minimal-ui',
-  icon: 'src/assets/favicon.ico',
+  icon: 'src/assets/favicon.png',
   headerLinks: [
     {
       label: 'Home',
