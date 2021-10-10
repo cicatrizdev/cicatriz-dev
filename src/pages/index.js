@@ -30,26 +30,26 @@ const Separator = styled.hr`
   opacity: 0.2;
 `
 
-console.log(
-  `
-  ___
-  |_|
-   |._
-   |'."-._.-""--.-"-.__.-'/
-   |  |                  (
-   |   |   Keep moving    )
-   |   |     forward!    /
-   |  /                 /
-   |.'                 (
-   |.-"-.__.-""-.__.-"-.)
-   |
-   |
-   |
-  ------------------------
- / May the X be with you! |
-/                         |
-  `
-)
+// console.log(
+//   `
+//   ___
+//   |_|
+//    |._
+//    |'."-._.-""--.-"-.__.-'/
+//    |  |                  (
+//    |   |   Keep moving    )
+//    |   |     forward!    /
+//    |  /                 /
+//    |.'                 (
+//    |.-"-.__.-""-.__.-"-.)
+//    |
+//    |
+//    |
+//   ------------------------
+//  / May the X be with you! |
+// /                         |
+//   `
+// )
 
 const Home = ({ className, location }) => {
   // validate siteConfig settings
