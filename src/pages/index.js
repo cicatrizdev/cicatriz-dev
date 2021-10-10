@@ -11,7 +11,7 @@ import {
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
-import heroImg from '../assets/cover.gif'
+// import heroImg from '../assets/cover.gif'
 
 import Hero from '../components/hero'
 import SEO from '../components/SEO'
@@ -65,7 +65,7 @@ const Home = ({ className, location }) => {
     <Layout location={location}>
       <SEO title={title} keywords={keywords} />
 
-      <Hero heroImg={heroImg} title={title} />
+      <Hero heroImg={siteConfig.siteCover} title={title} />
 
       <Wrapper className={className}>
         <Container className="page-content" fluid>
