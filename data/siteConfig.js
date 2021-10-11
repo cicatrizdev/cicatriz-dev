@@ -84,7 +84,7 @@ module.exports = {
   },
   siteUrl: 'https://cicatriz.dev',
   pathPrefix: '/',
-  siteCover: '/images/cover.gif',
+  siteCover: '/images/cover.jpg',
   googleAnalyticsId: 'G-V07973F3M6',
   background_color: '#ffffff',
   theme_color: '#320335',
