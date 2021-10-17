@@ -1,13 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaWhatsapp,
-  FaInstagram,
-} from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram } from 'react-icons/fa'
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
@@ -106,16 +100,6 @@ const Home = ({ className, location }) => {
                     <FaInstagram className="social-icon" size="32" />
                   </a>
                 )}
-                {siteConfig.social.whatsapp && (
-                  <a
-                    className="social-link whatsapp"
-                    href={`https://api.whatsapp.com/send?phone=${siteConfig.social.whatsapp}&text=Fala%2C+Cicatriz%21+Estou+entrando+em+contato+atrav%C3%A9s+do+seu+site.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaWhatsapp className="social-icon" size="32" />
-                  </a>
-                )}
                 {siteConfig.social.email && (
                   <a
                     className="social-link email"
@@ -176,12 +160,8 @@ export default styled(Home)`
     color: #000000;
   }
 
-  a.social-link.whatsapp:hover {
-    color: #25d366;
-  }
-
   a.social-link.github:hover {
-    color: #24292e;
+    opacity: 0.4;
   }
 
   a.social-link.linkedin:hover {

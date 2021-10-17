@@ -5,7 +5,7 @@ module.exports = {
   authorName: 'Pedro Mello',
   githubUsername: 'pedrocmello',
   authorAvatar: '/images/avatar.jpeg',
-  authorDescription: `Howdy! I'm Pedro, a mobile/front-end engineer from Brazil. 
+  authorDescription: `Howdy! I'm Pedro, (aka Cicatriz), a mobile/front-end engineer from Brazil. 
   <br />
   <br />
   I'm passionate about creating beautiful and functional web/mobile applications. I'm a self-taught developer and I'm always looking for new challenges and opportunities.
@@ -14,7 +14,7 @@ module.exports = {
   I have a passion for learning new technologies and I love to share my knowledge. Mentoring and helping others to learn is my favorite thing to do.
   <br />
   <br />
-  My stack is mostly Javascript/TypeScript, with a focus on React and React Native. I'm also familiar with Node.js, Express, Android, Flutter and UI Design.
+  My stack is mostly Javascript/TypeScript, with a focus on React and React Native. I'm also familiar with Node.js, Flutter and UI Design.
   <br />
   <br />
   `,
@@ -80,7 +80,6 @@ module.exports = {
     github: 'https://github.com/pedrocmello',
     email: 'contato@cicatriz.dev',
     instagram: 'https://instagram.com/cicatriz.dev',
-    whatsapp: '5532999255105',
   },
   siteUrl: 'https://cicatriz.dev',
   pathPrefix: '/',
