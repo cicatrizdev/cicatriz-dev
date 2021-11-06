@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram } from 'react-icons/fa'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaCalendarCheck,
+} from 'react-icons/fa'
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
@@ -90,14 +95,14 @@ const Home = ({ className, location }) => {
                     <FaLinkedin className="social-icon" size="32" />
                   </a>
                 )}
-                {siteConfig.social.instagram && (
+                {siteConfig.social.calendly && (
                   <a
-                    className="social-link instagram"
-                    href={siteConfig.social.instagram}
+                    className="social-link calendly"
+                    href={siteConfig.social.calendly}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaInstagram className="social-icon" size="32" />
+                    <FaCalendarCheck className="social-icon" size="32" />
                   </a>
                 )}
                 {siteConfig.social.email && (
@@ -172,7 +177,7 @@ export default styled(Home)`
     color: #c23a2b;
   }
 
-  a.social-link.instagram:hover {
-    color: #405de6;
+  a.social-link.calendly:hover {
+    color: #a3b017;
   }
 `

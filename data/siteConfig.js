@@ -79,7 +79,7 @@ module.exports = {
     linkedin: 'https://www.linkedin.com/in/pedro-c-mello',
     github: 'https://github.com/pedrocmello',
     email: 'contato@cicatriz.dev',
-    instagram: 'https://instagram.com/cicatriz.dev',
+    calendly: 'https://calendly.com/cicatriz-dev/mentorship-1-1',
   },
   siteUrl: 'https://cicatriz.dev',
   pathPrefix: '/',

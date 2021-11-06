@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 import { motion } from 'framer-motion'
 import { ResetCSS, GlobalStyle, themes } from '../styles'
-import Header from '../header'
 import Footer from '../footer'
 import { useDarkMode } from './useDarkMode'
 import { animateOnScroll } from '../../utils/isVisible'
@@ -28,7 +27,6 @@ const Layout = ({ children, location }) => {
       <ResetCSS />
       <GlobalStyle />
       <StyledContainer>
-        {/* <Header location={location} onChangeTheme={setTheme} theme={theme} /> */}
         <motion.main
           key={location}
           variants={variants}
