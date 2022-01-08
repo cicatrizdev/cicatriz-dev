@@ -95,7 +95,7 @@ const Home = ({ className, location }) => {
                     <FaLinkedin className="social-icon" size="32" />
                   </a>
                 )}
-                {siteConfig.social.calendly && (
+                {/* {siteConfig.social.calendly && (
                   <a
                     className="social-link calendly"
                     href={siteConfig.social.calendly}
@@ -104,7 +104,7 @@ const Home = ({ className, location }) => {
                   >
                     <FaCalendarCheck className="social-icon" size="32" />
                   </a>
-                )}
+                )} */}
                 {siteConfig.social.email && (
                   <a
                     className="social-link email"
