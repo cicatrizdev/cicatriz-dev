@@ -3,7 +3,7 @@ module.exports = {
   siteDescription: `My personal website, let's keep in touch :)`,
   keyWords: ['gatsbyjs', 'react', 'styled-components', 'cicatriz.dev'],
   authorName: 'Pedro Mello',
-  githubUsername: 'pedrocmello',
+  githubUsername: 'cicatrizdev',
   authorAvatar: '/images/avatar.jpeg',
   authorDescription: `Howdy! I'm Pedro, (aka Cicatriz), a mobile/front-end engineer from Brazil. 
   <br />
@@ -77,7 +77,7 @@ module.exports = {
   ],
   social: {
     linkedin: 'https://www.linkedin.com/in/pedro-c-mello',
-    github: 'https://github.com/pedrocmello',
+    github: 'https://github.com/cicatrizdev',
     email: 'contato@cicatriz.dev',
     // calendly: 'https://calendly.com/cicatriz-dev/mentorship-1-1',
   },
