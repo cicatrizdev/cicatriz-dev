@@ -76,7 +76,7 @@ const Repositories = () => {
   }
   return (
     <div>
-      <h1>Let's work together?</h1>
+      <h1>Let's work together!</h1>
       <p>
         Use the form below to send me an email and I'll get back to you as soon
         as I can. I hope we can work together in an awesome project!
@@ -97,7 +97,7 @@ const Repositories = () => {
         {() => (
           <Form>
             <InputWrapper>
-              <label htmlFor="contactName">Full name</label>
+              <label htmlFor="contactName">Your name</label>
               <Field
                 placeholder="Ex: Edson Arantes"
                 id="contactName"
@@ -117,9 +117,9 @@ const Repositories = () => {
               <StyledErrorMessage component="span" name="contactEmail" />
             </InputWrapper>
             <InputWrapper>
-              <label htmlFor="contactMessage">Nice message to me :)</label>
+              <label htmlFor="contactMessage">Your nice message :)</label>
               <Field
-                placeholder="Ex: Hey! Let's drink a beer? 🍺"
+                placeholder="Ex: Hey! Let's drink a beer 🍺"
                 id="contactMessage"
                 name="contactMessage"
                 type="text"

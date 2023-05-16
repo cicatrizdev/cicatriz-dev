@@ -5,18 +5,7 @@ import siteConfig from '../../../data/siteConfig'
 
 import BMCoffee from '../../assets/buymeacoffee.svg'
 
-const Link = styled(({ className, icon: Icon, color, ...props }) => (
-  <a className={className} target="_blank" rel="noopener noreferrer" {...props}>
-    <Icon color={color} size={32} />
-  </a>
-)).attrs(props => ({ color: props.theme.colors.fontColor }))`
-  & + & {
-    margin-left: 24px;
-  }
-`
-
 const Footer = ({ className }) => {
-  const { twitter, linkedin, github } = siteConfig.social
   return (
     <footer className={className}>
       <div>Developed with 💙 {` by ${siteConfig.authorName}`}</div>

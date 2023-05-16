@@ -50,13 +50,6 @@ console.log(
 )
 
 const Home = ({ className, location }) => {
-  // validate siteConfig settings
-  if (siteConfig.googleAnalyticsId === 'UA-000000000-1') {
-    console.error(
-      'WARNING: Please set a proper googleAnalyticsId. See https://analytics.google.com for details.'
-    )
-  }
-
   const title = siteConfig.siteTitle
   const { keywords } = siteConfig
   return (
@@ -95,16 +88,6 @@ const Home = ({ className, location }) => {
                     <FaLinkedin className="social-icon" size="32" />
                   </a>
                 )}
-                {/* {siteConfig.social.calendly && (
-                  <a
-                    className="social-link calendly"
-                    href={siteConfig.social.calendly}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaCalendarCheck className="social-icon" size="32" />
-                  </a>
-                )} */}
                 {siteConfig.social.email && (
                   <a
                     className="social-link email"
