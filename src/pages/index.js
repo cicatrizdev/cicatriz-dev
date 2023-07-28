@@ -17,7 +17,7 @@ import Wrapper from '../components/wrapper'
 import About from '../components/about'
 import Skills from '../components/skills'
 import Timeline from '../components/timeline'
-import Repositories from '../components/repositories'
+// import Repositories from '../components/repositories'
 
 const Layout = loadable(() => import('../components/layout'))
 
@@ -111,8 +111,9 @@ const Home = ({ className, location }) => {
           </Row>
           <Separator />
           <Timeline />
-          <Separator />
-          {siteConfig.githubUsername && <Repositories />}
+          {/* TODO: fix email service */}
+          {/* <Separator />
+          {siteConfig.githubUsername && <Repositories />} */}
         </Container>
       </Wrapper>
     </Layout>

@@ -5,7 +5,7 @@ module.exports = {
   authorName: 'Pedro Mello',
   githubUsername: 'cicatrizdev',
   authorAvatar: '/images/avatar.jpeg',
-  authorDescription: `Howdy! I'm Pedro, (aka Cicatriz), a mobile/front-end engineer from Brazil. 
+  authorDescription: `Howdy! I'm Pedro, (aka Cicatriz), a Software Engineer based in Brazil. 
   <br />
   <br />
   I'm passionate about creating beautiful and functional web/mobile applications. I'm a self-taught developer and I'm always looking for new challenges and opportunities.
