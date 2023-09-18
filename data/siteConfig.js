@@ -18,40 +18,6 @@ module.exports = {
   <br />
   <br />
   `,
-  skills: [
-    {
-      name: 'HTML/CSS',
-      level: 75,
-    },
-    {
-      name: 'Javascript/TypeScript',
-      level: 85,
-    },
-    {
-      name: 'React',
-      level: 80,
-    },
-    {
-      name: 'Redux',
-      level: 75,
-    },
-    {
-      name: 'React Native',
-      level: 80,
-    },
-    {
-      name: 'Node',
-      level: 55,
-    },
-    {
-      name: 'Flutter',
-      level: 40,
-    },
-    {
-      name: 'UI Design',
-      level: 55,
-    },
-  ],
   jobs: [
     {
       title: 'Development',
