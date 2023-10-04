@@ -15,16 +15,12 @@ const IconSelector = jobType => {
   switch (jobType) {
     case 'coding':
       return coding
-      break
     case 'design':
       return design
-      break
     case 'mentor':
       return mentor
-      break
     case 'consultant':
       return consultant
-      break
     default:
       break
   }

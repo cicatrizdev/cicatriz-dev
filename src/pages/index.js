@@ -1,12 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaCalendarCheck,
-} from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
@@ -17,7 +12,6 @@ import Wrapper from '../components/wrapper'
 import About from '../components/about'
 import Skills from '../components/skills'
 import Timeline from '../components/timeline'
-// import Repositories from '../components/repositories'
 
 const Layout = loadable(() => import('../components/layout'))
 
@@ -111,9 +105,6 @@ const Home = ({ className, location }) => {
           </Row>
           <Separator />
           <Timeline />
-          {/* TODO: fix email service */}
-          {/* <Separator />
-          {siteConfig.githubUsername && <Repositories />} */}
         </Container>
       </Wrapper>
     </Layout>

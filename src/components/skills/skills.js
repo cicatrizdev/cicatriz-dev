@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import SkillBar from './skill-bar'
 
 export default styled(({ className, title = 'Skills' }) => (
   <div className={className}>

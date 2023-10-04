@@ -13,10 +13,10 @@ const Wrapper = styled.main.attrs({
   background-color: ${({ theme }) => theme.colors.background};
   margin: 0px auto 30px auto;
   top: -100px;
-  box-shadow: 0px 7px 12px 16px rgba(0,0,0,0.55);
+  box-shadow: 0px 7px 12px 16px rgba(0, 0, 0, 0.55);
   min-height: 150px;
-  
-  ${(props) => config(props).media.sm`
+
+  ${props => config(props).media.sm`
     width: 80%;
     padding: 50px;
   `}

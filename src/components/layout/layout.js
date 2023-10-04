@@ -4,7 +4,6 @@ import styled, { ThemeProvider } from 'styled-components'
 import { motion } from 'framer-motion'
 import { ResetCSS, GlobalStyle, themes } from '../styles'
 import Footer from '../footer'
-import { useDarkMode } from './useDarkMode'
 import { animateOnScroll } from '../../utils/isVisible'
 
 const variants = {
@@ -18,12 +17,11 @@ const StyledContainer = styled.div`
 `
 
 const Layout = ({ children, location }) => {
-  const [theme, setTheme] = useDarkMode()
   useEffect(() => {
     animateOnScroll()
   }, [])
   return (
-    <ThemeProvider theme={themes[theme || 'light']}>
+    <ThemeProvider theme={themes['dark']}>
       <ResetCSS />
       <GlobalStyle />
       <StyledContainer>
