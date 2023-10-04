@@ -60,6 +60,9 @@ const Home = ({ className, location }) => {
                 className="avatar__image"
                 src={withPrefix(siteConfig.authorAvatar)}
                 alt="user avatar"
+                width={200}
+                height={200}
+                style={{ objectFit: 'cover' }}
               />
               <div className="social">
                 {siteConfig.social.github && (
@@ -137,7 +140,7 @@ export default styled(Home)`
 
   .social-link {
     padding: 8px;
-    color: #000000;
+    color: #fff;
   }
 
   a.social-link.github:hover {

@@ -4,7 +4,7 @@ module.exports = {
   keyWords: ['gatsbyjs', 'react', 'styled-components', 'cicatriz.dev'],
   authorName: 'Pedro Mello',
   githubUsername: 'cicatrizdev',
-  authorAvatar: '/images/avatar.jpeg',
+  authorAvatar: '/images/avatar.jpg',
   authorDescription: `Howdy! I'm Pedro, (aka Cicatriz), a Software Engineer based in Brazil. 
   <br />
   <br />
