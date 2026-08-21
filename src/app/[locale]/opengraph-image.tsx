@@ -28,7 +28,15 @@ const colors = {
   fg: '#e6e1d6',
   dim: '#7a8480',
   accent: '#f5a524',
+  rule: '#2a302d',
 }
+
+const heading = {
+  fontSize: 30,
+  fontWeight: 700,
+  letterSpacing: 4,
+  color: colors.accent,
+} as const
 
 export default async function Image({
   params,
@@ -39,7 +47,9 @@ export default async function Image({
   const locale = isLocale(raw) ? raw : defaultLocale
   const ui = getUi(locale)
   const title = `${site.command.toUpperCase()}(${site.manSection})`
-  const usage = `${site.command} ${services.map((s) => `[${s.flag}]`).join(' ')}`
+  // Satori lays out nested inline text poorly: render word by word in wrapping flex rows.
+  const nameWords = ui.name.summary.split(' ')
+  const usageTokens = [site.command, ...services.map((s) => `[${s.flag}]`)]
 
   return new ImageResponse(
     <div
@@ -60,7 +70,7 @@ export default async function Image({
           justifyContent: 'space-between',
           fontSize: 28,
           color: colors.dim,
-          borderBottom: `2px solid #2a302d`,
+          borderBottom: `2px solid ${colors.rule}`,
           paddingBottom: 24,
         }}
       >
@@ -71,49 +81,64 @@ export default async function Image({
 
       <div style={{ display: 'flex', flex: 1, alignItems: 'center', gap: 56 }}>
         <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-          <span
+          <span style={heading}>{ui.sections.name.toUpperCase()}</span>
+          <div
             style={{
-              fontSize: 30,
-              fontWeight: 700,
-              letterSpacing: 4,
-              color: colors.accent,
-            }}
-          >
-            {ui.sections.name.toUpperCase()}
-          </span>
-          <span
-            style={{
-              fontSize: 40,
+              display: 'flex',
+              flexWrap: 'wrap',
+              columnGap: 14,
+              fontSize: 38,
               lineHeight: 1.35,
               marginTop: 12,
               paddingLeft: 48,
             }}
           >
             <span style={{ fontWeight: 700 }}>{site.command}</span>
-            {` — ${ui.name.summary}`}
-          </span>
-          <span
-            style={{
-              fontSize: 30,
-              fontWeight: 700,
-              letterSpacing: 4,
-              color: colors.accent,
-              marginTop: 44,
-            }}
-          >
+            <span style={{ color: colors.dim }}>—</span>
+            {nameWords.map((word, i) => (
+              <span key={`${word}-${i}`}>{word}</span>
+            ))}
+          </div>
+          <span style={{ ...heading, marginTop: 44 }}>
             {ui.sections.synopsis.toUpperCase()}
           </span>
-          <span
+          <div
             style={{
-              fontSize: 32,
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              columnGap: 14,
+              fontSize: 28,
               marginTop: 12,
               paddingLeft: 48,
-              color: colors.fg,
             }}
           >
-            {usage}
-            <span style={{ color: colors.accent }}>█</span>
-          </span>
+            {usageTokens.map((token, i) => (
+              <div
+                key={token}
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <span
+                  style={{
+                    color: i === 0 ? colors.accent : colors.fg,
+                    fontWeight: i === 0 ? 700 : 400,
+                  }}
+                >
+                  {token}
+                </span>
+                {i === usageTokens.length - 1 && (
+                  <div
+                    style={{
+                      width: 16,
+                      height: 30,
+                      marginLeft: 6,
+                      background: colors.accent,
+                    }}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
         <img
           src={avatarSrc}
@@ -130,7 +155,7 @@ export default async function Image({
           justifyContent: 'space-between',
           fontSize: 26,
           color: colors.dim,
-          borderTop: `2px solid #2a302d`,
+          borderTop: `2px solid ${colors.rule}`,
           paddingTop: 24,
         }}
       >
