@@ -56,7 +56,7 @@ export const en = {
     request: 'Request',
   },
   examples: {
-    lead: 'Selected work. Output may vary.',
+    lead: 'Client work stays under NDA — see',
     visit: 'open',
     source: 'source',
     wip: 'in progress',

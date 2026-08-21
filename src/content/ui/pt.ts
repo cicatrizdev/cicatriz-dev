@@ -57,7 +57,7 @@ export const pt = {
     request: 'Solicitar',
   },
   examples: {
-    lead: 'Trabalhos selecionados. A saída pode variar.',
+    lead: 'Trabalho para clientes fica sob NDA — veja',
     visit: 'abrir',
     source: 'código',
     wip: 'em andamento',

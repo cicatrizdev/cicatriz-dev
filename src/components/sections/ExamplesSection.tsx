@@ -1,14 +1,22 @@
 import type { Locale } from '@/lib/i18n'
 import { site, projects, getUi, sectionIds } from '@/content'
+import { langTag } from '@/lib/i18n'
 import { Section } from '@/components/layout/Section'
 import { Tag } from '@/components/ui/Tag'
 import s from './sections.module.css'
 
 export function ExamplesSection({ locale }: { locale: Locale }) {
   const ui = getUi(locale)
+  if (projects.length === 0) return null
   return (
     <Section id={sectionIds.examples} title={ui.sections.examples}>
-      <p className={s.lead}>{ui.examples.lead}</p>
+      <p className={s.lead}>
+        {ui.examples.lead}{' '}
+        <a href={`#${sectionIds.history}`} lang={langTag[locale]}>
+          {ui.sections.history.toUpperCase()}
+        </a>
+        .
+      </p>
       <ul className={s.examples}>
         {projects.map((project) => (
           <li key={project.slug} className={s.example}>
