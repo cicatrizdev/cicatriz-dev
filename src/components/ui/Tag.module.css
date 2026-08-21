@@ -1,0 +1,15 @@
+.tag {
+  display: inline-block;
+  color: var(--fg);
+  white-space: nowrap;
+}
+
+.tag::before {
+  content: '[';
+  color: var(--dim);
+}
+
+.tag::after {
+  content: ']';
+  color: var(--dim);
+}

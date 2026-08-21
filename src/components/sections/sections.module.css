@@ -1,0 +1,278 @@
+/* Shared styles for the man page sections. */
+
+.lead {
+  color: var(--dim);
+  margin-bottom: var(--space-6);
+}
+
+.dim {
+  color: var(--dim);
+}
+
+.sub {
+  font-weight: 600;
+  margin-top: var(--space-6);
+}
+
+/* NAME */
+.name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.avatar {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  padding: 2px;
+  background: var(--bg);
+}
+
+.nameLine {
+  margin: 0;
+  text-wrap: balance;
+}
+
+.cmd {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+/* SYNOPSIS */
+.usage {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  font-stretch: 90%;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--fg);
+  overflow-wrap: anywhere;
+}
+
+.usage > * {
+  display: inline-block;
+  margin-right: 0.6ch;
+}
+
+.usageCmd {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.usageOpt {
+  opacity: 0;
+  animation: appear 0s steps(1, end) forwards;
+  animation-delay: calc(0.4s + var(--i, 0) * 0.22s);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: -0.12em;
+  background: var(--accent);
+  animation: blink var(--cursor-blink) steps(1, end) infinite;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .usageOpt {
+    animation: none;
+    opacity: 1;
+  }
+
+  .cursor {
+    animation: none;
+  }
+}
+
+.note {
+  color: var(--dim);
+  font-size: var(--text-sm);
+}
+
+/* DESCRIPTION — skills */
+.skills {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: var(--space-4);
+  row-gap: var(--space-2);
+  margin: 0;
+}
+
+.skills > div {
+  display: contents;
+}
+
+.skills dt {
+  color: var(--dim);
+}
+
+.skills dd {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+}
+
+/* OPTIONS */
+.options {
+  margin: 0;
+}
+
+.option + .option {
+  margin-top: var(--space-6);
+}
+
+.optHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--space-2);
+}
+
+.flag {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.arg {
+  color: var(--dim);
+}
+
+.optTitle {
+  font-weight: 600;
+}
+
+.optTitle::before {
+  content: '— ';
+  color: var(--dim);
+  font-weight: 400;
+}
+
+.optBody {
+  margin: var(--space-1) 0 0 var(--indent);
+}
+
+/* EXAMPLES */
+.examples {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.example + .example {
+  margin-top: var(--space-8);
+}
+
+.cmdLine {
+  margin: 0 0 var(--space-2);
+  color: var(--fg);
+}
+
+.prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.exTitle {
+  font-weight: 600;
+}
+
+.example p {
+  margin: var(--space-1) 0 0;
+}
+
+.exMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+/* HISTORY */
+.history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 17ch 1fr;
+  gap: var(--space-4);
+}
+
+.job + .job {
+  margin-top: var(--space-6);
+}
+
+.range {
+  color: var(--dim);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.jobHead {
+  font-weight: 600;
+}
+
+.jobHead a {
+  color: inherit;
+}
+
+.role {
+  font-weight: 400;
+  color: var(--dim);
+}
+
+.role::before {
+  content: '— ';
+}
+
+.job p {
+  margin: var(--space-1) 0 0;
+}
+
+/* SEE ALSO */
+.seeAlso {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seeAlso li + li {
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .optBody {
+    margin-left: 0;
+  }
+
+  .job {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+
+  .usage {
+    font-stretch: 85%;
+  }
+}

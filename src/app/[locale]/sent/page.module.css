@@ -1,0 +1,13 @@
+.line {
+  margin: 0;
+}
+
+.prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ok {
+  color: var(--ok);
+  font-weight: 700;
+}

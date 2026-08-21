@@ -1,0 +1,83 @@
+/*
+ * Design tokens — the only place colors, type and spacing are defined.
+ * Light = "paper" (a printed man page). Dark = "phosphor" (amber CRT glass).
+ */
+:root {
+  color-scheme: light;
+
+  --bg: #f7f5f0;
+  --surface: #ece9e2;
+  --fg: #1b1d1c;
+  --dim: #5e635f;
+  --accent: #a65f00;
+  --ok: #3f7d3a;
+  --err: #b3261e;
+  --rule: color-mix(in srgb, var(--fg) 16%, transparent);
+  --selection: color-mix(in srgb, var(--accent) 28%, transparent);
+
+  --font-mono:
+    var(--font-plex), ui-monospace, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+  --font-display: var(--font-martian), var(--font-mono);
+
+  /* type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
+  --leading: 1.65;
+
+  /* layout */
+  --measure: 76ch;
+  --indent: 4ch;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --header-h: 2.75rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --focus: 2px solid var(--accent);
+  --cursor-blink: 1s;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0c0f0d;
+  --surface: #141917;
+  --fg: #e6e1d6;
+  --dim: #7a8480;
+  --accent: #f5a524;
+  --ok: #7fb069;
+  --err: #e5776b;
+  --rule: color-mix(in srgb, var(--fg) 18%, transparent);
+  --selection: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* No-JS / no stored preference: follow the OS. Keep in sync with the block above. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0c0f0d;
+    --surface: #141917;
+    --fg: #e6e1d6;
+    --dim: #7a8480;
+    --accent: #f5a524;
+    --ok: #7fb069;
+    --err: #e5776b;
+    --rule: color-mix(in srgb, var(--fg) 18%, transparent);
+    --selection: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cursor-blink: 0s;
+  }
+}

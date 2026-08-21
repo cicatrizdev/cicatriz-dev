@@ -1,57 +1,44 @@
 {
   "name": "cicatriz-dev",
+  "version": "2.0.0",
   "private": true,
-  "description": "My personal website :)",
-  "version": "1.0.0",
-  "author": "Pedro Mello <contato@cicatriz.dev>",
-  "dependencies": {
-    "@loadable/component": "5.12.0",
-    "babel-plugin-styled-components": "1.10.6",
-    "emailjs-com": "^2.6.4",
-    "formik": "^2.2.6",
-    "framer-motion": "1.11.0",
-    "gatsby": "^2.30.3",
-    "gatsby-image": "2.4.7",
-    "gatsby-plugin-google-gtag": "^2.5.0",
-    "gatsby-plugin-manifest": "2.4.11",
-    "gatsby-plugin-offline": "3.2.9",
-    "gatsby-plugin-react-helmet": "3.3.4",
-    "gatsby-plugin-sharp": "2.6.11",
-    "gatsby-plugin-styled-components": "3.3.4",
-    "gatsby-source-filesystem": "2.3.11",
-    "gatsby-transformer-sharp": "2.5.5",
-    "prop-types": "15.7.2",
-    "react": "16.12.0",
-    "react-awesome-styled-grid": "3.0.7",
-    "react-dom": "16.12.0",
-    "react-helmet": "5.2.1",
-    "react-icons": "3.10.0",
-    "react-switch": "5.0.1",
-    "simple-json-fetch": "1.0.1",
-    "styled-components": "5.1.1",
-    "yup": "^0.32.8"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run typecheck && npm run format:check"
+  },
+  "dependencies": {
+    "@next/third-parties": "^16.3.2",
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "resend": "^6.21.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "gh-pages": "2.2.0",
-    "prettier": "1.19.1"
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.2",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6",
+    "typescript": "^5"
   },
+  "description": "Personal website of Pedro \"Cicatriz\" Mello — https://cicatriz.dev",
+  "author": "Pedro Mello <contato@cicatriz.dev>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/cicatrizdev/cicatriz-dev"
   },
-  "bugs": {
-    "url": "https://github.com/cicatrizdev/cicatriz-dev/issues"
+  "engines": {
+    "node": "22.x"
   }
 }
