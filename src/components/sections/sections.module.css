@@ -131,6 +131,16 @@
   gap: var(--space-1) var(--space-2);
 }
 
+.legend {
+  font-size: var(--text-sm);
+  color: var(--dim);
+}
+
+.legendItem {
+  display: inline-block;
+  margin-right: var(--space-3);
+}
+
 /* OPTIONS */
 .options {
   margin: 0;

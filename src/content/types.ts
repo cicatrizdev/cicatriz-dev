@@ -19,6 +19,8 @@ export type Project = {
   url?: string
   repo?: string
   year?: number
+  /** `wip` renders "in progress" instead of the year. */
+  status?: 'wip'
   stack: readonly string[]
   summary: Localized
 }
@@ -35,9 +37,17 @@ export type Experience = {
   summary: Localized
 }
 
+/** WoW item quality, used to encode how deep a skill goes. */
+export type Quality = 'legendary' | 'epic' | 'rare' | 'uncommon' | 'common'
+
+export type Skill = {
+  name: string
+  quality: Quality
+}
+
 export type SkillGroup = {
   label: Localized
-  items: readonly string[]
+  items: readonly Skill[]
 }
 
 export type ContactErrorCode =
@@ -94,6 +104,9 @@ export type UiStrings = {
   description: {
     paragraphs: readonly string[]
     skillsLead: string
+    /** Explains the item-quality colors of the stack tags. */
+    qualityLegend: string
+    quality: Record<Quality, string>
   }
   options: {
     lead: string
@@ -102,6 +115,7 @@ export type UiStrings = {
     lead: string
     visit: string
     source: string
+    wip: string
   }
   history: {
     lead: string
@@ -136,5 +150,7 @@ export type UiStrings = {
     title: string
     body: string
     back: string
+    /** The WoW UI error line. */
+    flavor: string
   }
 }

@@ -4,7 +4,7 @@ export const pt = {
   meta: {
     title: 'cicatriz(1) — Pedro Mello',
     description:
-      'Página de manual de Pedro "Cicatriz" Mello: engenheiro de software no Brasil atuando em toda a stack — web, mobile e back-end, com TypeScript no centro — consultoria para times e mentoria de devs.',
+      'Página de manual de Pedro "Cicatriz" Mello: engenheiro de software no Brasil atuando em toda a stack — web, mobile e back-end, com TypeScript no centro — consultoria para times, mentoria de devs e addons para WoW Classic.',
     ogAlt: 'cicatriz(1) — Pedro Mello, engenheiro de software. Uma man page.',
   },
   chrome: {
@@ -40,8 +40,17 @@ export const pt = {
       'Pedro Mello (vulgo Cicatriz) é um engenheiro de software autodidata baseado no Brasil. Atua em toda a stack — front-ends de produto, apps mobile, APIs e o ferramental que segura tudo junto — e já entregou o bastante de cada um pra preferir soluções chatas que chegam em produção.',
       'A especialidade é TypeScript de ponta a ponta: React e Next.js na web, React Native no mobile, Node.js por trás. Em volta desse núcleo, vai aonde o problema estiver: Python e Rust pra ferramentas, Swift e Kotlin quando nativo é a escolha certa, e o encanamento de cloud e CI que coloca tudo no ar.',
       'Está sempre aprendendo algo novo e gosta ainda mais de compartilhar. Ajudar devs nos primeiros passos — e nos seguintes — é a parte do trabalho que faria de graça.',
+      'Fora do expediente, costuma estar em algum lugar de Azeroth. O hobby está virando foco: addons em Lua, WeakAuras e macros para a comunidade de WoW Classic, feitos com o mesmo cuidado de tudo acima.',
     ],
     skillsLead: 'Stack',
+    qualityLegend: 'Cores por raridade de item:',
+    quality: {
+      legendary: 'especialidade',
+      epic: 'uso diário',
+      rare: 'confortável',
+      uncommon: 'familiar',
+      common: 'já vi',
+    },
   },
   options: {
     lead: 'Os serviços a seguir estão disponíveis. Qualquer um pode ser solicitado em BUGS, abaixo.',
@@ -50,6 +59,7 @@ export const pt = {
     lead: 'Trabalhos selecionados. A saída pode variar.',
     visit: 'abrir',
     source: 'código',
+    wip: 'em andamento',
   },
   history: {
     lead: 'Do mais recente ao mais antigo.',
@@ -57,7 +67,7 @@ export const pt = {
     empty: 'O histórico ainda está sendo escrito.',
   },
   bugs: {
-    lead: 'Reporte bugs, ideias de projeto e pedidos de mentoria pelo formulário abaixo, ou escreva para',
+    lead: 'Reporte bugs, ideias de projeto, pedidos de addon e de mentoria pelo formulário abaixo, ou escreva para',
     form: {
       name: 'Seu nome',
       namePlaceholder: 'Edson Arantes',
@@ -115,5 +125,6 @@ export const pt = {
     title: 'Não há entrada de manual para',
     body: 'Parece um link quebrado ou um caminho digitado errado.',
     back: 'Veja cicatriz(1)',
+    flavor: 'Alvo inválido.',
   },
 } satisfies UiStrings

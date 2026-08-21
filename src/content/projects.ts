@@ -55,4 +55,16 @@ export const projects: readonly Project[] = [
       pt: 'Blog pessoal com artigos sobre React e fundamentos de front-end, escritos em português para quem está começando.',
     },
   },
+  {
+    slug: 'classic-addons',
+    name: 'WoW Classic addons',
+    flag: '--addon',
+    repo: 'https://github.com/cicatrizdev',
+    status: 'wip',
+    stack: ['Lua', 'WoW API', 'WeakAuras'],
+    summary: {
+      en: 'The first addons, WeakAuras and macro packs for WoW Classic are in the works. They land on GitHub (and CurseForge) as they become usable.',
+      pt: 'Os primeiros addons, WeakAuras e pacotes de macros para WoW Classic estão em produção. Chegam ao GitHub (e ao CurseForge) conforme ficam usáveis.',
+    },
+  },
 ]

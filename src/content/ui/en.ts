@@ -4,7 +4,7 @@ export const en = {
   meta: {
     title: 'cicatriz(1) — Pedro Mello',
     description:
-      'Manual page for Pedro "Cicatriz" Mello: software engineer in Brazil working across the stack — web, mobile and back-end, TypeScript at the core — consulting with teams and mentoring developers.',
+      'Manual page for Pedro "Cicatriz" Mello: software engineer in Brazil working across the stack — web, mobile and back-end, TypeScript at the core — consulting with teams, mentoring developers and building addons for WoW Classic.',
     ogAlt: 'cicatriz(1) — Pedro Mello, software engineer. A man page.',
   },
   chrome: {
@@ -39,8 +39,17 @@ export const en = {
       'Pedro Mello (a.k.a. Cicatriz) is a self-taught software engineer based in Brazil. He works across the whole stack — product front-ends, mobile apps, APIs and the tooling that holds them together — and has shipped enough of each to prefer boring solutions that reach production.',
       'His specialty is TypeScript end to end: React and Next.js on the web, React Native on mobile, Node.js behind them. Around that core he goes wherever the problem lives: Python and Rust for tooling, Swift and Kotlin when native is the right call, and the cloud and CI plumbing that puts it all online.',
       'He is always learning something new and enjoys sharing it even more. Helping developers through their first steps — and their next ones — is the part of the job he would do for free.',
+      'Off the clock he is usually somewhere in Azeroth. That hobby is becoming a focus: Lua addons, WeakAuras and macros for the WoW Classic community, built with the same care as everything above.',
     ],
     skillsLead: 'Stack',
+    qualityLegend: 'Colored by item quality:',
+    quality: {
+      legendary: 'specialty',
+      epic: 'daily use',
+      rare: 'comfortable',
+      uncommon: 'familiar',
+      common: 'seen it',
+    },
   },
   options: {
     lead: 'The following services are available. Each can be requested under BUGS below.',
@@ -49,6 +58,7 @@ export const en = {
     lead: 'Selected work. Output may vary.',
     visit: 'open',
     source: 'source',
+    wip: 'in progress',
   },
   history: {
     lead: 'Most recent first.',
@@ -56,7 +66,7 @@ export const en = {
     empty: 'History is still being written.',
   },
   bugs: {
-    lead: 'Report bugs, project ideas and mentorship requests with the form below, or write to',
+    lead: 'Report bugs, project ideas, addon requests and mentorship requests with the form below, or write to',
     form: {
       name: 'Your name',
       namePlaceholder: 'Edson Arantes',
@@ -114,5 +124,6 @@ export const en = {
     title: 'No manual entry for',
     body: 'Looks like a broken link or a mistyped path.',
     back: 'See cicatriz(1)',
+    flavor: 'Invalid target.',
   },
 } satisfies UiStrings

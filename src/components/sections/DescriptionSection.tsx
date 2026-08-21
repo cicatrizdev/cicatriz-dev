@@ -18,12 +18,27 @@ export function DescriptionSection({ locale }: { locale: Locale }) {
             <dt>{group.label[locale]}</dt>
             <dd>
               {group.items.map((item) => (
-                <Tag key={item}>{item}</Tag>
+                <Tag
+                  key={item.name}
+                  quality={item.quality}
+                  title={ui.description.quality[item.quality]}
+                >
+                  {item.name}
+                </Tag>
               ))}
             </dd>
           </div>
         ))}
       </dl>
+      <p className={s.legend}>
+        {ui.description.qualityLegend}{' '}
+        {(['legendary', 'epic', 'rare', 'uncommon'] as const).map((quality) => (
+          <span key={quality} className={s.legendItem}>
+            <Tag quality={quality}>{quality}</Tag>{' '}
+            {ui.description.quality[quality]}
+          </span>
+        ))}
+      </p>
     </Section>
   )
 }

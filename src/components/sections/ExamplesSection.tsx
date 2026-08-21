@@ -22,7 +22,11 @@ export function ExamplesSection({ locale }: { locale: Locale }) {
             </p>
             <h3 className={s.exTitle}>
               {project.name}
-              {project.year && <span className={s.dim}> · {project.year}</span>}
+              {project.status === 'wip' ? (
+                <span className={s.dim}> · {ui.examples.wip}</span>
+              ) : (
+                project.year && <span className={s.dim}> · {project.year}</span>
+              )}
             </h3>
             <p>{project.summary[locale]}</p>
             <p className={s.exMeta}>

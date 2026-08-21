@@ -48,6 +48,7 @@ export default function GlobalNotFound() {
             <p className={styles.message}>
               {en.notFound.title} <CurrentPath />
             </p>
+            <p className={styles.flavor}>{en.notFound.flavor}</p>
             <p>
               {en.notFound.body}{' '}
               {/* Plain anchors: this document renders outside the app router. */}
@@ -56,6 +57,9 @@ export default function GlobalNotFound() {
             </p>
             <p className={styles.message} lang={langTag.pt}>
               {pt.notFound.title} <CurrentPath />
+            </p>
+            <p className={styles.flavor} lang={langTag.pt}>
+              {pt.notFound.flavor}
             </p>
             <p lang={langTag.pt}>
               {pt.notFound.body}{' '}

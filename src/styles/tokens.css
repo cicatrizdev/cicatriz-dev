@@ -45,10 +45,22 @@
 
   --focus: 2px solid var(--accent);
   --cursor-blink: 1s;
+
+  /* item quality (darkened for paper) */
+  --q-legendary: #b85c00;
+  --q-epic: #7a2fc2;
+  --q-rare: #0b5fb8;
+  --q-uncommon: #1f7a13;
+  --q-common: var(--fg);
 }
 
 [data-theme='dark'] {
   color-scheme: dark;
+  --q-legendary: #ff8000;
+  --q-epic: #a335ee;
+  --q-rare: #3c8ef0;
+  --q-uncommon: #1eff00;
+  --q-common: var(--fg);
   --bg: #0c0f0d;
   --surface: #141917;
   --fg: #e6e1d6;
@@ -64,6 +76,11 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
+    --q-legendary: #ff8000;
+    --q-epic: #a335ee;
+    --q-rare: #3c8ef0;
+    --q-uncommon: #1eff00;
+    --q-common: var(--fg);
     --bg: #0c0f0d;
     --surface: #141917;
     --fg: #e6e1d6;

@@ -20,6 +20,15 @@ export const services: readonly Service[] = [
     },
   },
   {
+    flag: '--addon',
+    arg: '<classic>',
+    title: { en: 'Addons & macros', pt: 'Addons e macros' },
+    description: {
+      en: 'Lua addons, WeakAuras and macros for World of Warcraft Classic — for guilds, communities and players who want a UI that does exactly what they need. A new focus, and a growing one.',
+      pt: 'Addons em Lua, WeakAuras e macros para World of Warcraft Classic — para guildas, comunidades e jogadores que querem uma UI que faça exatamente o que precisam. Foco novo, e crescendo.',
+    },
+  },
+  {
     flag: '--mentor',
     arg: '<dev>',
     title: { en: 'Mentorship', pt: 'Mentoria' },
