@@ -5,7 +5,8 @@ import s from './sections.module.css'
 
 export function HistorySection({ locale }: { locale: Locale }) {
   const ui = getUi(locale)
-  const entries = [...experience].sort((a, b) => (a.start < b.start ? 1 : -1))
+  // Most recent first; ties keep file order (Array.prototype.sort is stable).
+  const entries = [...experience].sort((a, b) => b.start.localeCompare(a.start))
   return (
     <Section id={sectionIds.history} title={ui.sections.history}>
       <p className={s.lead}>{ui.history.lead}</p>
@@ -28,6 +29,11 @@ export function HistorySection({ locale }: { locale: Locale }) {
                     job.company
                   )}{' '}
                   <span className={s.role}>{job.role[locale]}</span>
+                  {job.via && (
+                    <span className={s.via}>
+                      {ui.history.via} {job.via}
+                    </span>
+                  )}
                 </h3>
                 <p>{job.summary[locale]}</p>
               </div>

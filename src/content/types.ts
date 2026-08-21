@@ -29,6 +29,8 @@ export type Project = {
 export type Experience = {
   company: string
   url?: string
+  /** Employer/agency the engagement runs through, e.g. a client served via X-Team. */
+  via?: string
   role: Localized
   /** ISO month, e.g. `2024-03`. */
   start: string
@@ -122,6 +124,8 @@ export type UiStrings = {
   history: {
     lead: string
     present: string
+    /** Connector before `via` companies: "Cosm · via X-Team". */
+    via: string
     /** Shown when no entries exist yet. */
     empty: string
   }

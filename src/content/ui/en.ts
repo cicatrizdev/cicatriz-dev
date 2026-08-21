@@ -64,6 +64,7 @@ export const en = {
   history: {
     lead: 'Most recent first.',
     present: 'present',
+    via: 'via',
     empty: 'History is still being written.',
   },
   bugs: {

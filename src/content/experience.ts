@@ -1,20 +1,20 @@
 import type { Experience } from '@/content/types'
 
 /**
- * Professional history shown under HISTORY, most recent first.
- * TODO(pedro): fill in real roles, dates and one-line summaries. The entries
- * below are placeholders inferred from public profiles — dates are NOT real.
+ * Professional history shown under HISTORY, most recent first (stable for ties).
+ * TODO(pedro): confirm start dates — they are placeholders. Nothing here has ended.
  */
 export const experience: readonly Experience[] = [
   {
     company: 'Cosm',
     url: 'https://www.cosm.com',
+    via: 'X-Team',
     role: { en: 'Software Engineer', pt: 'Engenheiro de Software' },
     start: '2024-01',
     end: null,
     summary: {
-      en: 'Front-end for immersive venue experiences: storefront, checkout and admin tooling in React and Next.js.',
-      pt: 'Front-end para experiências imersivas em venues: loja, checkout e ferramentas administrativas em React e Next.js.',
+      en: 'On the Cosm product team through X-Team: storefront, checkout and admin tooling for immersive venues, in React and Next.js.',
+      pt: 'No time de produto da Cosm, via X-Team: loja, checkout e ferramentas administrativas para venues imersivos, em React e Next.js.',
     },
   },
   {
@@ -22,10 +22,10 @@ export const experience: readonly Experience[] = [
     url: 'https://x-team.com',
     role: { en: 'Software Engineer', pt: 'Engenheiro de Software' },
     start: '2021-01',
-    end: '2023-12',
+    end: null,
     summary: {
-      en: 'Remote engineering for partner companies, shipping React and React Native products in distributed teams.',
-      pt: 'Engenharia remota para empresas parceiras, entregando produtos React e React Native em times distribuídos.',
+      en: 'Remote engineer with X-Team, placed with partner companies on React and React Native products in distributed teams — currently at Cosm.',
+      pt: 'Engenheiro remoto pela X-Team, alocado em empresas parceiras em produtos React e React Native com times distribuídos — atualmente na Cosm.',
     },
   },
   {

@@ -65,6 +65,7 @@ export const pt = {
   history: {
     lead: 'Do mais recente ao mais antigo.',
     present: 'atual',
+    via: 'via',
     empty: 'O histórico ainda está sendo escrito.',
   },
   bugs: {
