@@ -7,6 +7,8 @@ import { site, services, getUi } from '@/content'
 export const alt = 'cicatriz(1) — Pedro Mello, software engineer'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
+/** Re-render daily so the GitHub avatar stays current. */
+export const revalidate = 86400
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -16,12 +18,25 @@ const fontsDir = join(
   process.cwd(),
   'node_modules/@fontsource/ibm-plex-mono/files'
 )
-const [regular, bold, avatar] = await Promise.all([
+const [regular, bold, fallbackAvatar] = await Promise.all([
   readFile(join(fontsDir, 'ibm-plex-mono-latin-400-normal.woff')),
   readFile(join(fontsDir, 'ibm-plex-mono-latin-700-normal.woff')),
-  readFile(join(process.cwd(), 'src/assets/avatar.jpg'), 'base64'),
+  readFile(join(process.cwd(), 'src/assets/avatar.jpg')),
 ])
-const avatarSrc = `data:image/jpeg;base64,${avatar}`
+
+/** Current GitHub avatar as a data URL; the committed file if GitHub is unreachable. */
+async function avatarDataUrl(): Promise<string> {
+  try {
+    const res = await fetch(`${site.avatar}?s=440`, { next: { revalidate } })
+    if (!res.ok) throw new Error(`avatar ${res.status}`)
+    const type = res.headers.get('content-type') ?? 'image/jpeg'
+    const data = Buffer.from(await res.arrayBuffer()).toString('base64')
+    return `data:${type};base64,${data}`
+  } catch (error) {
+    console.warn('[og] GitHub avatar unavailable, using local fallback', error)
+    return `data:image/jpeg;base64,${fallbackAvatar.toString('base64')}`
+  }
+}
 
 const colors = {
   bg: '#0c0f0d',
@@ -46,6 +61,7 @@ export default async function Image({
   const { locale: raw } = await params
   const locale = isLocale(raw) ? raw : defaultLocale
   const ui = getUi(locale)
+  const avatarSrc = await avatarDataUrl()
   const title = `${site.command.toUpperCase()}(${site.manSection})`
   // Satori lays out nested inline text poorly: render word by word in wrapping flex rows.
   const nameWords = ui.name.summary.split(' ')

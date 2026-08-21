@@ -22,6 +22,8 @@ Everything visible lives in `src/content/`:
 | `skills.ts`            | DESCRIPTION — stack tags                    |
 | `site.ts`              | Name, URLs, email, analytics id             |
 
+The avatar is the GitHub profile picture (`site.avatar`), so updating it on GitHub updates the site; `src/assets/avatar.jpg` is only the fallback for the social card.
+
 Structured entries carry both languages (`{ en, pt }`), so a missing translation is a type error.
 
 ## Development

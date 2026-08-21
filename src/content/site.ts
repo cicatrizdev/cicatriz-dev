@@ -5,6 +5,8 @@ export const site = {
   manSection: 1,
   name: 'Pedro Mello',
   handle: 'cicatrizdev',
+  /** GitHub avatar — stable URL that always serves the current picture. Append `?s=<px>`. */
+  avatar: 'https://avatars.githubusercontent.com/u/16566846',
   url: 'https://cicatriz.dev',
   email: 'contato@cicatriz.dev',
   location: 'Brazil',

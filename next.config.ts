@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   turbopack: { root: process.cwd() },
   experimental: { globalNotFound: true },
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
+    ],
+  },
   poweredByHeader: false,
   async redirects() {
     // `/` → locale. Order matters: explicit choice (cookie) wins, then the

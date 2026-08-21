@@ -2,7 +2,6 @@ import Image from 'next/image'
 import type { Locale } from '@/lib/i18n'
 import { site, getUi, sectionIds } from '@/content'
 import { Section } from '@/components/layout/Section'
-import avatar from '@/assets/avatar.jpg'
 import s from './sections.module.css'
 
 export function NameSection({ locale }: { locale: Locale }) {
@@ -11,7 +10,7 @@ export function NameSection({ locale }: { locale: Locale }) {
     <Section id={sectionIds.name} title={ui.sections.name}>
       <div className={s.name}>
         <Image
-          src={avatar}
+          src={`${site.avatar}?s=144`}
           alt={ui.name.avatarAlt}
           width={72}
           height={72}
