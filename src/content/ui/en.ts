@@ -52,7 +52,8 @@ export const en = {
     },
   },
   options: {
-    lead: 'The following services are available. Each can be requested under BUGS below.',
+    lead: 'Each option is a service. To invoke one, see BUGS — or use the prompt under it.',
+    request: 'Request',
   },
   examples: {
     lead: 'Selected work. Output may vary.',
@@ -68,6 +69,8 @@ export const en = {
   bugs: {
     lead: 'Report bugs, project ideas, addon requests and mentorship requests with the form below, or write to',
     form: {
+      topic: 'Regarding',
+      topicOther: 'something else',
       name: 'Your name',
       namePlaceholder: 'Edson Arantes',
       email: 'Your email',

@@ -110,6 +110,8 @@ export type UiStrings = {
   }
   options: {
     lead: string
+    /** Accessible label prefix of the `$ cicatriz --flag` invocation links. */
+    request: string
   }
   examples: {
     lead: string
@@ -126,6 +128,8 @@ export type UiStrings = {
   bugs: {
     lead: string
     form: {
+      topic: string
+      topicOther: string
       name: string
       namePlaceholder: string
       email: string

@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState, type FormEvent } from 'react'
 import type { Locale } from '@/lib/i18n'
 import type { ContactStatusCode, UiStrings } from '@/content/types'
 import type { FieldErrors } from '@/lib/contact/schema'
+import { TOPIC_SELECT_ID } from './RequestLink'
 import styles from './ContactForm.module.css'
 
 type Strings = UiStrings['bugs']['form']
@@ -23,11 +24,12 @@ type Props = {
   locale: Locale
   strings: Strings
   email: string
+  topics: readonly { id: string; label: string }[]
 }
 
 const LIMITS = { name: 100, email: 200, messageMin: 10, messageMax: 5000 }
 
-export function ContactForm({ locale, strings, email }: Props) {
+export function ContactForm({ locale, strings, email, topics }: Props) {
   const id = useId()
   const [status, setStatus] = useState<Status>({ kind: 'idle' })
   /** When the form became interactive; sent along so the server can spot instant (bot) submissions. */
@@ -133,6 +135,25 @@ export function ContactForm({ locale, strings, email }: Props) {
           tabIndex={-1}
           autoComplete="off"
         />
+      </div>
+
+      <div className={styles.field}>
+        <label htmlFor={TOPIC_SELECT_ID} className={styles.label}>
+          {strings.topic}
+        </label>
+        <select
+          id={TOPIC_SELECT_ID}
+          name="topic"
+          className={styles.input}
+          defaultValue="other"
+        >
+          {topics.map((topic) => (
+            <option key={topic.id} value={topic.id}>
+              {topic.label}
+            </option>
+          ))}
+          <option value="other">{strings.topicOther}</option>
+        </select>
       </div>
 
       <Field

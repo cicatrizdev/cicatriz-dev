@@ -19,6 +19,7 @@ function renderText(
 ) {
   return [
     `From: ${input.name} <${input.email}>`,
+    `Topic: ${input.topic}`,
     `Locale: ${input.locale}`,
     `IP: ${meta.ip}`,
     `UA: ${meta.userAgent}`,
@@ -51,7 +52,10 @@ export async function sendContact(
     from,
     to,
     replyTo: input.email,
-    subject: `[${site.command}.dev] ${input.name}`,
+    subject:
+      input.topic === 'other'
+        ? `[${site.command}.dev] ${input.name}`
+        : `[${site.command}.dev] --${input.topic} · ${input.name}`,
     text: renderText(input, meta),
   })
   if (error) {

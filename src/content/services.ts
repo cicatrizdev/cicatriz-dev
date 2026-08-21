@@ -6,8 +6,8 @@ export const services: readonly Service[] = [
     arg: '<web|mobile|api>',
     title: { en: 'Development', pt: 'Desenvolvimento' },
     description: {
-      en: 'Web, mobile and back-end applications, end to end: from the first screen to the store listing or the production deploy. React, React Native, Node.js — and whatever the product honestly needs.',
-      pt: 'Aplicações web, mobile e back-end de ponta a ponta: da primeira tela à publicação na loja ou ao deploy em produção. React, React Native, Node.js — e o que mais o produto honestamente precisar.',
+      en: 'Web, mobile and back-end applications, end to end — from the first screen to the store listing or the production deploy. TypeScript by default; beyond that, whatever the product honestly needs.',
+      pt: 'Aplicações web, mobile e back-end de ponta a ponta — da primeira tela à publicação na loja ou ao deploy em produção. TypeScript por padrão; fora isso, o que o produto honestamente precisar.',
     },
   },
   {
@@ -15,8 +15,8 @@ export const services: readonly Service[] = [
     arg: '<team>',
     title: { en: 'Consulting', pt: 'Consultoria' },
     description: {
-      en: 'Help for development teams to ship better products: architecture reviews, code reviews, front-end foundations and hands-on training tailored to the team.',
-      pt: 'Ajuda para times de desenvolvimento entregarem produtos melhores: revisão de arquitetura, code review, fundações de front-end e treinamento prático feito sob medida.',
+      en: "For teams that want to ship better: architecture and code reviews, technical foundations (tooling, CI/CD, testing) and hands-on training shaped to the team's actual codebase.",
+      pt: 'Para times que querem entregar melhor: revisão de arquitetura e de código, fundações técnicas (ferramental, CI/CD, testes) e treinamento prático moldado na base de código real do time.',
     },
   },
   {
@@ -24,8 +24,8 @@ export const services: readonly Service[] = [
     arg: '<classic>',
     title: { en: 'Addons & macros', pt: 'Addons e macros' },
     description: {
-      en: 'Lua addons, WeakAuras and macros for World of Warcraft Classic — for guilds, communities and players who want a UI that does exactly what they need. A new focus, and a growing one.',
-      pt: 'Addons em Lua, WeakAuras e macros para World of Warcraft Classic — para guildas, comunidades e jogadores que querem uma UI que faça exatamente o que precisam. Foco novo, e crescendo.',
+      en: 'Lua addons, WeakAuras and macro packs for World of Warcraft Classic: custom tools for guilds and communities, raid-ready auras, and rescuing addons their authors left behind.',
+      pt: 'Addons em Lua, WeakAuras e pacotes de macros para World of Warcraft Classic: ferramentas sob medida para guildas e comunidades, auras prontas pra raid e resgate de addons que os autores abandonaram.',
     },
   },
   {

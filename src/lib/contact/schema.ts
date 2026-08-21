@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { locales } from '@/lib/i18n'
+import { services } from '@/content/services'
 import type { ContactErrorCode } from '@/content/types'
 
 export const LIMITS = {
@@ -11,11 +12,18 @@ export const LIMITS = {
   maxBodyBytes: 16 * 1024,
 } as const
 
+/** Subject ids: `other` plus one per service flag. */
+export const topicIds: [string, ...string[]] = [
+  'other',
+  ...services.map((s) => s.flag.replace(/^--/, '')),
+]
+
 export const contactSchema = z.object({
   name: z.string().trim().min(LIMITS.name.min).max(LIMITS.name.max),
   email: z.string().trim().max(LIMITS.email.max).pipe(z.email()),
   message: z.string().trim().min(LIMITS.message.min).max(LIMITS.message.max),
   locale: z.enum(locales).default('en'),
+  topic: z.enum(topicIds).default('other'),
   /** Honeypot — must stay empty. */
   website: z.string().optional(),
   /** Epoch ms when the form was rendered; set by JS only. */

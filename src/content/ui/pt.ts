@@ -53,7 +53,8 @@ export const pt = {
     },
   },
   options: {
-    lead: 'Os serviços a seguir estão disponíveis. Qualquer um pode ser solicitado em BUGS, abaixo.',
+    lead: 'Cada opção é um serviço. Para invocar qualquer uma, veja BUGS — ou use o prompt logo abaixo dela.',
+    request: 'Solicitar',
   },
   examples: {
     lead: 'Trabalhos selecionados. A saída pode variar.',
@@ -69,6 +70,8 @@ export const pt = {
   bugs: {
     lead: 'Reporte bugs, ideias de projeto, pedidos de addon e de mentoria pelo formulário abaixo, ou escreva para',
     form: {
+      topic: 'Assunto',
+      topicOther: 'outra coisa',
       name: 'Seu nome',
       namePlaceholder: 'Edson Arantes',
       email: 'Seu e-mail',
