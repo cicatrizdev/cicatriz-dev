@@ -4,9 +4,15 @@ import { site } from '@/content/site'
 /**
  * Selected work shown under EXAMPLES. Curated, not exhaustive: only things
  * that are live and current, or actively in progress. Client work stays
- * under NDA and is described in HISTORY instead. An empty list hides the section.
+ * under NDA and is described in HISTORY instead.
+ *
+ * Empty on purpose for now — the section (and its nav entry) stay hidden
+ * until there is something worth showing. Move entries up from `draftProjects`.
  */
-export const projects: readonly Project[] = [
+export const projects: readonly Project[] = []
+
+/** Ready-to-use entries for when EXAMPLES comes back. */
+export const draftProjects: readonly Project[] = [
   {
     slug: 'cicatriz.dev',
     name: 'cicatriz.dev',

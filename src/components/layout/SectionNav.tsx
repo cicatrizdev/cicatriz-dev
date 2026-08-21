@@ -1,5 +1,5 @@
 import type { Locale } from '@/lib/i18n'
-import { getUi, sectionIds, type SectionKey } from '@/content'
+import { getUi, projects, sectionIds, type SectionKey } from '@/content'
 import styles from './SectionNav.module.css'
 
 const order: SectionKey[] = [
@@ -22,13 +22,15 @@ export function SectionNav({ locale }: { locale: Locale }) {
         :
       </span>
       <ul className={styles.list}>
-        {order.map((key) => (
-          <li key={key}>
-            <a href={`#${sectionIds[key]}`} className={styles.link}>
-              {ui.sections[key]}
-            </a>
-          </li>
-        ))}
+        {order
+          .filter((key) => key !== 'examples' || projects.length > 0)
+          .map((key) => (
+            <li key={key}>
+              <a href={`#${sectionIds[key]}`} className={styles.link}>
+                {ui.sections[key]}
+              </a>
+            </li>
+          ))}
       </ul>
     </nav>
   )
