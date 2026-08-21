@@ -33,6 +33,7 @@
 }
 
 select.input {
+  -webkit-appearance: none;
   appearance: none;
   background-image:
     linear-gradient(45deg, transparent 50%, var(--dim) 50%),

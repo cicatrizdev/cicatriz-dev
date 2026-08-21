@@ -3,8 +3,8 @@ import { IBM_Plex_Mono, Martian_Mono } from 'next/font/google'
 /** Body face: humanist mono, comfortable for long reading. */
 export const plex = IBM_Plex_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
+  // Only what the page uses; italics are synthesized for the one line that needs them.
+  weight: ['400', '600'],
   variable: '--font-plex',
   display: 'swap',
 })
