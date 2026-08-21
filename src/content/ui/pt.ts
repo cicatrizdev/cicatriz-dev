@@ -4,7 +4,7 @@ export const pt = {
   meta: {
     title: 'cicatriz(1) — Pedro Mello',
     description:
-      'Página de manual de Pedro "Cicatriz" Mello: engenheiro de software no Brasil, construindo produtos web e mobile com React e React Native, consultoria para times e mentoria de devs.',
+      'Página de manual de Pedro "Cicatriz" Mello: engenheiro de software no Brasil atuando em toda a stack — web, mobile e back-end, com TypeScript no centro — consultoria para times e mentoria de devs.',
     ogAlt: 'cicatriz(1) — Pedro Mello, engenheiro de software. Uma man page.',
   },
   chrome: {
@@ -37,8 +37,8 @@ export const pt = {
   },
   description: {
     paragraphs: [
-      'Pedro Mello (vulgo Cicatriz) é um engenheiro de software autodidata baseado no Brasil. Constrói aplicações web e mobile agradáveis de usar e sãs de manter — e faz isso há tempo suficiente pra preferir soluções chatas que chegam em produção.',
-      'A stack é majoritariamente TypeScript: React e React Native primeiro, Node.js e Next.js em volta, com Flutter e UI design ao alcance quando o projeto pede.',
+      'Pedro Mello (vulgo Cicatriz) é um engenheiro de software autodidata baseado no Brasil. Atua em toda a stack — front-ends de produto, apps mobile, APIs e o ferramental que segura tudo junto — e já entregou o bastante de cada um pra preferir soluções chatas que chegam em produção.',
+      'A especialidade é TypeScript de ponta a ponta: React e Next.js na web, React Native no mobile, Node.js por trás. Em volta desse núcleo, vai aonde o problema estiver: Python e Rust pra ferramentas, Swift e Kotlin quando nativo é a escolha certa, e o encanamento de cloud e CI que coloca tudo no ar.',
       'Está sempre aprendendo algo novo e gosta ainda mais de compartilhar. Ajudar devs nos primeiros passos — e nos seguintes — é a parte do trabalho que faria de graça.',
     ],
     skillsLead: 'Stack',

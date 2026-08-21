@@ -3,11 +3,11 @@ import type { Service } from '@/content/types'
 export const services: readonly Service[] = [
   {
     flag: '--build',
-    arg: '<web|mobile>',
+    arg: '<web|mobile|api>',
     title: { en: 'Development', pt: 'Desenvolvimento' },
     description: {
-      en: 'Web and mobile applications, end to end: from the first screen to the store listing. React, React Native and whatever the product honestly needs around them.',
-      pt: 'Aplicações web e mobile de ponta a ponta: da primeira tela à publicação na loja. React, React Native e o que mais o produto honestamente precisar em volta.',
+      en: 'Web, mobile and back-end applications, end to end: from the first screen to the store listing or the production deploy. React, React Native, Node.js — and whatever the product honestly needs.',
+      pt: 'Aplicações web, mobile e back-end de ponta a ponta: da primeira tela à publicação na loja ou ao deploy em produção. React, React Native, Node.js — e o que mais o produto honestamente precisar.',
     },
   },
   {

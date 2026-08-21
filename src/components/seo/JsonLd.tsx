@@ -17,7 +17,16 @@ export function JsonLd({ locale }: { locale: Locale }) {
     address: { '@type': 'PostalAddress', addressCountry: 'BR' },
     sameAs: [site.social.github, site.social.linkedin, site.social.blog],
     knowsLanguage: [langTag.pt, langTag.en],
-    knowsAbout: ['React', 'React Native', 'TypeScript', 'Next.js', 'Node.js'],
+    knowsAbout: [
+      'Software engineering',
+      'TypeScript',
+      'React',
+      'React Native',
+      'Next.js',
+      'Node.js',
+      'Software architecture',
+      'Mentoring',
+    ],
   }
   return (
     <script
