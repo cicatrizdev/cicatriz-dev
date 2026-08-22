@@ -61,7 +61,7 @@ export const skills: readonly SkillGroup[] = [
     ],
   },
   {
-    label: { en: 'ai tooling', pt: 'ferramentas de ia' },
+    label: { en: 'ai', pt: 'ia' },
     items: [epic('claude-code'), rare('mcp'), rare('agent-skills')],
   },
   {

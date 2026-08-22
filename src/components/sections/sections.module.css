@@ -333,6 +333,19 @@
 }
 
 @media (max-width: 640px) {
+  .skills {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-3);
+  }
+
+  .skills > div {
+    display: block;
+  }
+
+  .skills dt {
+    margin-bottom: var(--space-1);
+  }
+
   .optBody {
     margin-left: 0;
   }

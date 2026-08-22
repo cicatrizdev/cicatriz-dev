@@ -15,7 +15,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
     description: ui.meta.description,
     image: `${site.url}/${locale}/opengraph-image`,
     address: { '@type': 'PostalAddress', addressCountry: 'BR' },
-    sameAs: [site.social.github, site.social.linkedin, site.social.blog],
+    sameAs: [site.social.github, site.social.linkedin],
     knowsLanguage: [langTag.pt, langTag.en],
     knowsAbout: [
       'Software engineering',

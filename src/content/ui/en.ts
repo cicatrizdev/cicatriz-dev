@@ -123,11 +123,6 @@ export const en = {
         href: 'https://www.linkedin.com/in/pedro-c-mello',
         description: 'career history',
       },
-      {
-        label: 'blog(7)',
-        href: 'https://pedro-mello.netlify.com',
-        description: 'articles, in Portuguese',
-      },
     ],
   },
   notFound: {

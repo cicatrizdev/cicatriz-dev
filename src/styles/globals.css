@@ -109,3 +109,42 @@ pre {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* A man page prints well by nature: ink on paper, no chrome. */
+@media print {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --dim: #444;
+    --accent: #000;
+    --rule: #999;
+  }
+
+  header,
+  nav,
+  form,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a[href^='http']::after {
+    content: ' <' attr(href) '>';
+    color: var(--dim);
+    font-size: 0.85em;
+  }
+
+  section {
+    break-inside: avoid;
+  }
+}

@@ -124,11 +124,6 @@ export const pt = {
         href: 'https://www.linkedin.com/in/pedro-c-mello',
         description: 'histórico profissional',
       },
-      {
-        label: 'blog(7)',
-        href: 'https://pedro-mello.netlify.com',
-        description: 'artigos, em português',
-      },
     ],
   },
   notFound: {

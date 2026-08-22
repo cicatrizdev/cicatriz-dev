@@ -13,7 +13,6 @@ export const site = {
   social: {
     github: 'https://github.com/cicatrizdev',
     linkedin: 'https://www.linkedin.com/in/pedro-c-mello',
-    blog: 'https://pedro-mello.netlify.com',
   },
   repo: 'https://github.com/cicatrizdev/cicatriz-dev',
   gaId: 'G-V07973F3M6',

@@ -12,6 +12,7 @@ import { plex, martian } from '@/lib/fonts'
 import { metadataBase } from '@/lib/metadata'
 import { site, getUi } from '@/content'
 import { ThemeScript } from '@/components/theme/ThemeScript'
+import { ConsoleBanner } from '@/components/seo/ConsoleBanner'
 import { ManHeader } from '@/components/layout/ManHeader'
 import { Footer } from '@/components/layout/Footer'
 import '@/styles/globals.css'
@@ -64,6 +65,7 @@ export default async function RootLayout({ children, params }: Props) {
           {children}
         </main>
         <Footer locale={locale} />
+        <ConsoleBanner />
         {analyticsOn && <GoogleAnalytics gaId={site.gaId} />}
       </body>
     </html>
