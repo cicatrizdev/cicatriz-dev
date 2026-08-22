@@ -24,15 +24,15 @@
   },
   "devDependencies": {
     "@fontsource/ibm-plex-mono": "^5.3.0",
-    "@types/node": "^22",
+    "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "esbuild": "^0.28.2",
-    "eslint": "^9",
+    "eslint": "^10",
     "eslint-config-next": "16.3.2",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
-    "typescript": "^5"
+    "typescript": "^7"
   },
   "description": "Personal website of Pedro \"Cicatriz\" Mello — https://cicatriz.dev",
   "author": "Pedro Mello <contato@cicatriz.dev>",
