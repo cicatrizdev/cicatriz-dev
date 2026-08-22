@@ -27,7 +27,8 @@ export type Project = {
 
 /** One entry of the HISTORY section (a job / engagement). */
 export type Experience = {
-  company: string
+  /** Plain name, or localized for synthetic entries like “Early career”. */
+  company: string | Localized
   url?: string
   /** Employer/agency the engagement runs through, e.g. a client served via X-Team. */
   via?: string

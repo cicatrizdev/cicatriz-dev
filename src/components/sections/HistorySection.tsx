@@ -14,31 +14,37 @@ export function HistorySection({ locale }: { locale: Locale }) {
         <p>{ui.history.empty}</p>
       ) : (
         <ol className={s.history}>
-          {entries.map((job) => (
-            <li key={`${job.company}-${job.start}`} className={s.job}>
-              <span className={s.range}>
-                {job.start} – {job.end ?? ui.history.present}
-              </span>
-              <div>
-                <h3 className={s.jobHead}>
-                  {job.url ? (
-                    <a href={job.url} target="_blank" rel="noopener">
-                      {job.company}
-                    </a>
-                  ) : (
-                    job.company
-                  )}{' '}
-                  <span className={s.role}>{job.role[locale]}</span>
-                  {job.via && (
-                    <span className={s.via}>
-                      {ui.history.via} {job.via}
-                    </span>
-                  )}
-                </h3>
-                <p>{job.summary[locale]}</p>
-              </div>
-            </li>
-          ))}
+          {entries.map((job) => {
+            const company =
+              typeof job.company === 'string'
+                ? job.company
+                : job.company[locale]
+            return (
+              <li key={`${company}-${job.start}`} className={s.job}>
+                <span className={s.range}>
+                  {job.start} – {job.end ?? ui.history.present}
+                </span>
+                <div>
+                  <h3 className={s.jobHead}>
+                    {job.url ? (
+                      <a href={job.url} target="_blank" rel="noopener">
+                        {company}
+                      </a>
+                    ) : (
+                      company
+                    )}{' '}
+                    <span className={s.role}>{job.role[locale]}</span>
+                    {job.via && (
+                      <span className={s.via}>
+                        {ui.history.via} {job.via}
+                      </span>
+                    )}
+                  </h3>
+                  <p>{job.summary[locale]}</p>
+                </div>
+              </li>
+            )
+          })}
         </ol>
       )}
     </Section>

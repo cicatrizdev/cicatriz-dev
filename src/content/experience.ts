@@ -58,7 +58,7 @@ export const experience: readonly Experience[] = [
     },
   },
   {
-    company: 'Early career',
+    company: { en: 'Early career', pt: 'Início de carreira' },
     role: {
       en: 'Full-stack developer & research mentor',
       pt: 'Dev full-stack e mentor de pesquisa',
