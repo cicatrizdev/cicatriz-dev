@@ -19,6 +19,8 @@ export const skills: readonly SkillGroup[] = [
       legendary('typescript'),
       legendary('javascript'),
       rare('python'),
+      rare('go'),
+      rare('java'),
       rare('lua'),
       uncommon('rust'),
       uncommon('swift'),
@@ -57,6 +59,10 @@ export const skills: readonly SkillGroup[] = [
       rare('github-actions'),
       rare('ci/cd'),
     ],
+  },
+  {
+    label: { en: 'ai tooling', pt: 'ferramentas de ia' },
+    items: [epic('claude-code'), rare('mcp'), rare('agent-skills')],
   },
   {
     label: { en: 'azeroth', pt: 'azeroth' },
