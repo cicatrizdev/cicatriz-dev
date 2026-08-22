@@ -1,5 +1,4 @@
 import type { Project } from '@/content/types'
-import { site } from '@/content/site'
 
 /**
  * Selected work shown under EXAMPLES. Curated, not exhaustive: only things

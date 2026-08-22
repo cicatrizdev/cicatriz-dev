@@ -7,8 +7,8 @@ import { site, services, getUi } from '@/content'
 export const alt = 'cicatriz(1) — Pedro Mello, software engineer'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-/** Re-render daily so the GitHub avatar stays current. */
-export const revalidate = 86400
+/** Re-render hourly at most, so a new GitHub avatar shows up on the card the same day. */
+export const revalidate = 3600
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))

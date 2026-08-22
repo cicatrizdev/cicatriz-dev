@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
   turbopack: { root: process.cwd() },
   experimental: { globalNotFound: true },
   images: {
+    // GitHub serves avatars with max-age=300; follow it instead of Next's 4h default.
+    minimumCacheTTL: 300,
     remotePatterns: [
       { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
     ],
