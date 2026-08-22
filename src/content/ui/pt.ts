@@ -121,6 +121,11 @@ export const pt = {
   seeAlso: {
     items: [
       {
+        label: 'npx cicatriz',
+        href: 'https://www.npmjs.com/package/cicatriz',
+        description: 'este manual, no seu terminal',
+      },
+      {
         label: 'github(1)',
         href: 'https://github.com/cicatrizdev',
         description: 'código e experimentos',
