@@ -43,6 +43,19 @@ Without `RESEND_API_KEY` the contact route logs the message instead of sending i
 | `npm run build`          | production build                            |
 | `npm run check`          | lint + typecheck + prettier                 |
 | `node scripts/icons.mjs` | regenerate favicons from `src/app/icon.svg` |
+| `npm run cli`            | build and run the terminal man page         |
+
+## `npx cicatriz`
+
+The same manual page in the terminal, built from the same content:
+
+```bash
+npx cicatriz            # full man page (pages through less)
+npx cicatriz --mentor   # one option + how to get in touch
+npx cicatriz --lang pt  # Portuguese (defaults to your LANG)
+```
+
+Source in `cli/`, bundled by `npm run cli:build` (esbuild, content baked in). Publish from `cli/` with `npm publish` after building.
 
 ## Routes
 

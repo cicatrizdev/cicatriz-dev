@@ -45,3 +45,6 @@ next-env.d.ts
 /.playwright-mcp
 /*.png
 /.claude
+
+# cli bundle (built on publish)
+/cli/dist

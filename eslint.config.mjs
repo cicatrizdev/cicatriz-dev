@@ -13,5 +13,6 @@ export default defineConfig([
     'build/**',
     'next-env.d.ts',
     'scripts/**/*.mjs',
+    'cli/dist/**',
   ]),
 ])
