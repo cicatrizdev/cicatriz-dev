@@ -302,6 +302,8 @@
 
 .job p {
   margin: var(--space-1) 0 0;
+  color: var(--dim);
+  font-size: var(--text-sm);
 }
 
 /* STANDARDS */
