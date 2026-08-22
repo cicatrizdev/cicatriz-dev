@@ -8,9 +8,8 @@ export type SendResult =
 
 const apiKey = process.env.RESEND_API_KEY
 const to = process.env.CONTACT_TO_EMAIL ?? site.email
-const from =
-  process.env.CONTACT_FROM_EMAIL ??
-  `${site.command}.dev <onboarding@resend.dev>`
+// Resend's sandbox sender rejects a display name, so the default is the bare address.
+const from = process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev'
 
 /** Plain text only: nothing from the visitor is ever interpreted as HTML. */
 function renderText(
