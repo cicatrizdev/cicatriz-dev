@@ -40,7 +40,7 @@ export function HistorySection({ locale }: { locale: Locale }) {
                       </span>
                     )}
                   </h3>
-                  <p>{job.summary[locale]}</p>
+                  {job.summary && <p>{job.summary[locale]}</p>}
                 </div>
               </li>
             )

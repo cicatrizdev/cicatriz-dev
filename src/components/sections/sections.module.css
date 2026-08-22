@@ -264,7 +264,7 @@
 }
 
 .job + .job {
-  margin-top: var(--space-6);
+  margin-top: var(--space-3);
 }
 
 .range {

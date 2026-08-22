@@ -37,7 +37,8 @@ export type Experience = {
   start: string
   /** ISO month, or `null` while ongoing. */
   end: string | null
-  summary: Localized
+  /** Optional one-liner; pure-man mode leaves it out. */
+  summary?: Localized
 }
 
 /** WoW item quality, used to encode how deep a skill goes. */
