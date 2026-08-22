@@ -33,26 +33,15 @@ export const experience: readonly Experience[] = [
   {
     company: 'Lojas Riachuelo',
     url: 'https://www.riachuelo.com.br',
-    role: { en: 'Lead Software Engineer', pt: 'Lead Software Engineer' },
-    start: '2021-10',
-    end: '2023-01',
-    summary: {
-      en: "Led a five-engineer front-end team shipping the “infinite shelf” product discovery for Brazil's second-largest retail chain (+40% product visibility): seller dashboard and customer-facing e-commerce in React and React Native for 10M+ monthly users, Keycloak auth, Dynatrace/GA observability.",
-      pt: 'Liderei um time de cinco engenheiros de front-end entregando a descoberta de produtos “prateleira infinita” da segunda maior varejista do Brasil (+40% de visibilidade de produto): painel do vendedor e e-commerce para 10M+ usuários mensais em React e React Native, autenticação Keycloak, observabilidade Dynatrace/GA.',
-    },
-  },
-  {
-    company: 'Lojas Riachuelo',
-    url: 'https://www.riachuelo.com.br',
     role: {
-      en: 'Senior Software Engineer',
-      pt: 'Engenheiro de Software Sênior',
+      en: 'Senior → Lead Software Engineer',
+      pt: 'Engenheiro de Software Sênior → Lead',
     },
     start: '2021-01',
-    end: '2021-10',
+    end: '2023-01',
     summary: {
-      en: 'Core features of the “infinite shelf” initiative during the move from the monolith to a React-based architecture; cross-platform mobile features in React Native.',
-      pt: 'Funcionalidades centrais da iniciativa “prateleira infinita” na transição do monólito para uma arquitetura em React; features mobile multiplataforma em React Native.',
+      en: "Joined the “infinite shelf” product discovery for Brazil's second-largest retail chain during the move from the monolith to React, then led its five-engineer front-end team: seller dashboard and customer-facing e-commerce in React and React Native for 10M+ monthly users (+40% product visibility), Keycloak auth, Dynatrace/GA observability.",
+      pt: 'Entrei na descoberta de produtos “prateleira infinita” da segunda maior varejista do Brasil durante a saída do monólito para React e depois liderei seu time de cinco engenheiros de front-end: painel do vendedor e e-commerce para 10M+ usuários mensais em React e React Native (+40% de visibilidade de produto), autenticação Keycloak, observabilidade Dynatrace/GA.',
     },
   },
   {
