@@ -11,22 +11,65 @@ const to = process.env.CONTACT_TO_EMAIL ?? site.email
 // Resend's sandbox sender rejects a display name, so the default is the bare address.
 const from = process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev'
 
-/** Plain text only: nothing from the visitor is ever interpreted as HTML. */
+const WIDTH = 72
+const INDENT = ' '.repeat(7)
+
+/** Wrap a paragraph to `WIDTH` columns with a man-page indent; blank lines are kept. */
+function manParagraph(text: string): string[] {
+  return text.split(/\r?\n/).flatMap((line) => {
+    if (!line.trim()) return ['']
+    const out: string[] = []
+    let cur = ''
+    for (const word of line.split(/\s+/)) {
+      if (cur && (cur + ' ' + word).length > WIDTH - INDENT.length) {
+        out.push(INDENT + cur)
+        cur = word
+      } else cur = cur ? `${cur} ${word}` : word
+    }
+    if (cur) out.push(INDENT + cur)
+    return out
+  })
+}
+
+function manHeader(title: string, center: string) {
+  const space = Math.max(2, WIDTH - title.length * 2 - center.length)
+  const left = Math.floor(space / 2)
+  return `${title}${' '.repeat(left)}${center}${' '.repeat(space - left)}${title}`
+}
+
+/**
+ * Plain text only, formatted like a man page. Nothing from the visitor is ever
+ * interpreted as HTML, and the first line of the body is the one that matters:
+ * who wrote, and about what.
+ */
 function renderText(
   input: ContactInput,
   meta: { ip: string; userAgent: string }
 ) {
+  const title = `${site.command.toUpperCase()}(${site.manSection})`
+  const synopsis =
+    input.topic === 'other' ? site.command : `${site.command} --${input.topic}`
   return [
-    `From: ${input.name} <${input.email}>`,
-    `Topic: ${input.topic}`,
-    `Locale: ${input.locale}`,
-    `IP: ${meta.ip}`,
-    `UA: ${meta.userAgent}`,
+    manHeader(title, 'Bug report'),
     '',
-    input.message,
+    'NAME',
+    `${INDENT}${input.name} <${input.email}>`,
     '',
-    '--',
-    `Sent via ${site.url}/${input.locale}#bugs`,
+    'SYNOPSIS',
+    `${INDENT}${synopsis}`,
+    '',
+    'DESCRIPTION',
+    ...manParagraph(input.message),
+    '',
+    'ENVIRONMENT',
+    `${INDENT}LANG=${input.locale === 'pt' ? 'pt_BR' : 'en_US'}  IP=${meta.ip}`,
+    ...manParagraph(`UA=${meta.userAgent || '-'}`),
+    '',
+    'SEE ALSO',
+    `${INDENT}reply-to: ${input.email}`,
+    `${INDENT}${site.url}/${input.locale}#bugs`,
+    '',
+    manHeader(title, new Date().toISOString().slice(0, 10)),
   ].join('\n')
 }
 
