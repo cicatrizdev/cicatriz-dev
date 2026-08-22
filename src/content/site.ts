@@ -15,7 +15,6 @@ export const site = {
     linkedin: 'https://www.linkedin.com/in/pedro-c-mello',
   },
   repo: 'https://github.com/cicatrizdev/cicatriz-dev',
-  gaId: 'G-V07973F3M6',
 } as const
 
 export type Site = typeof site

@@ -10,7 +10,8 @@ import {
 } from '@/lib/i18n'
 import { plex, martian } from '@/lib/fonts'
 import { metadataBase } from '@/lib/metadata'
-import { site, getUi } from '@/content'
+import { getUi } from '@/content'
+import { gaId } from '@/content/analytics'
 import { ThemeScript } from '@/components/theme/ThemeScript'
 import { ConsoleBanner } from '@/components/seo/ConsoleBanner'
 import { ManHeader } from '@/components/layout/ManHeader'
@@ -66,7 +67,7 @@ export default async function RootLayout({ children, params }: Props) {
         </main>
         <Footer locale={locale} />
         <ConsoleBanner />
-        {analyticsOn && <GoogleAnalytics gaId={site.gaId} />}
+        {analyticsOn && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   )
