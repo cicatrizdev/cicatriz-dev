@@ -1,0 +1,39 @@
+.toggle {
+  display: none;
+  align-items: baseline;
+  gap: 0;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--dim);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+:global(:root[data-theme]) .toggle {
+  display: inline-flex;
+}
+
+.toggle:hover {
+  color: var(--fg);
+  border-color: var(--rule);
+}
+
+.flag {
+  color: var(--dim);
+}
+
+.whenDark,
+.whenLight {
+  color: var(--accent);
+}
+
+:global([data-theme='dark']) .whenLight {
+  display: none;
+}
+
+:global([data-theme='light']) .whenDark {
+  display: none;
+}

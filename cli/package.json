@@ -1,0 +1,35 @@
+{
+  "name": "cicatriz",
+  "version": "1.0.0",
+  "description": "man cicatriz — Pedro \"Cicatriz\" Mello's manual page, in your terminal.",
+  "license": "MIT",
+  "author": "Pedro Mello <contato@cicatriz.dev>",
+  "homepage": "https://cicatriz.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cicatrizdev/cicatriz-dev",
+    "directory": "cli"
+  },
+  "type": "module",
+  "bin": {
+    "cicatriz": "dist/cicatriz.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cicatriz",
+    "man",
+    "manual",
+    "cli",
+    "portfolio",
+    "pedro-mello"
+  ],
+  "scripts": {
+    "prepublishOnly": "node ../scripts/build-cli.mjs"
+  }
+}

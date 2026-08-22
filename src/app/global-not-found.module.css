@@ -1,0 +1,21 @@
+.line {
+  margin: 0;
+}
+
+.prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.message {
+  color: var(--err);
+  margin-top: var(--space-6);
+}
+
+/* the WoW UI error line: red, centered-ish, fades like the real one would */
+.flavor {
+  color: var(--err);
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: var(--space-1);
+}

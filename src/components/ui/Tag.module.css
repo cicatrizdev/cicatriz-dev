@@ -1,0 +1,35 @@
+.tag {
+  display: inline-block;
+  color: var(--fg);
+  white-space: nowrap;
+}
+
+.tag::before {
+  content: '[';
+  color: var(--dim);
+}
+
+.tag::after {
+  content: ']';
+  color: var(--dim);
+}
+
+.legendary {
+  color: var(--q-legendary);
+}
+
+.epic {
+  color: var(--q-epic);
+}
+
+.rare {
+  color: var(--q-rare);
+}
+
+.uncommon {
+  color: var(--q-uncommon);
+}
+
+.common {
+  color: var(--q-common);
+}
