@@ -35,10 +35,7 @@ export const experience: readonly Experience[] = [
   },
   {
     company: 'Tata · BRQ · Safra · Blu · IGTI',
-    role: {
-      en: 'Front-end engineer, bootcamp instructor',
-      pt: 'Engenheiro front-end, instrutor de bootcamp',
-    },
+    role: { en: 'Front-end & bootcamps', pt: 'Front-end e bootcamps' },
     start: '2019-08',
     end: '2021-11',
   },
