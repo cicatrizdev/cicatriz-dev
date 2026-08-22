@@ -1,0 +1,26 @@
+.played {
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: var(--space-6) var(--gutter) 0;
+  font-size: var(--text-sm);
+  color: var(--dim);
+}
+
+.cmd {
+  margin: 0 0 var(--space-1);
+  color: var(--fg);
+}
+
+.slash {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.line {
+  margin: 0;
+}
+
+/* WoW prints /played in the system-message yellow; ours is the amber we already own. */
+.value {
+  color: var(--accent);
+}

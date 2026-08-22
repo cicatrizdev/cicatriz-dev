@@ -16,6 +16,12 @@ export const pt = {
     langSwitch: 'Read in English',
     sourceLink: 'código',
     built: 'gerado',
+    played: {
+      total: 'Tempo total jogado',
+      level: 'Tempo jogado neste nível',
+      years: ['ano', 'anos'],
+      months: ['mês', 'meses'],
+    },
   },
   sections: {
     name: 'Nome',

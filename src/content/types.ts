@@ -96,6 +96,13 @@ export type UiStrings = {
     sourceLink: string
     /** Footer middle cell label, e.g. "built". */
     built: string
+    /** The WoW `/played` readout in the footer. */
+    played: {
+      total: string
+      level: string
+      years: [string, string]
+      months: [string, string]
+    }
   }
   sections: {
     name: string

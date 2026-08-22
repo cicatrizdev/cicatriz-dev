@@ -16,6 +16,12 @@ export const en = {
     langSwitch: 'Ler em português',
     sourceLink: 'source',
     built: 'built',
+    played: {
+      total: 'Total time played',
+      level: 'Time played this level',
+      years: ['year', 'years'],
+      months: ['month', 'months'],
+    },
   },
   sections: {
     name: 'Name',

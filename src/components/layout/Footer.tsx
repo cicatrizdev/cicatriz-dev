@@ -1,6 +1,7 @@
 import type { Locale } from '@/lib/i18n'
 import { site, getUi } from '@/content'
 import { manTitle } from './ManHeader'
+import { Played } from './Played'
 import styles from './Footer.module.css'
 
 /** Stamped once per build; the man page's "date" field. */
@@ -11,6 +12,7 @@ export function Footer({ locale }: { locale: Locale }) {
   const host = new URL(site.url).host
   return (
     <footer className={styles.footer}>
+      <Played locale={locale} />
       <div className={styles.inner}>
         <a
           href={site.repo}
