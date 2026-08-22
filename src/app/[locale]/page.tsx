@@ -10,6 +10,7 @@ import { DescriptionSection } from '@/components/sections/DescriptionSection'
 import { OptionsSection } from '@/components/sections/OptionsSection'
 import { ExamplesSection } from '@/components/sections/ExamplesSection'
 import { HistorySection } from '@/components/sections/HistorySection'
+import { StandardsSection } from '@/components/sections/StandardsSection'
 import { BugsSection } from '@/components/sections/BugsSection'
 import { SeeAlsoSection } from '@/components/sections/SeeAlsoSection'
 
@@ -34,6 +35,7 @@ export default async function Page({ params }: Props) {
       <OptionsSection locale={locale} />
       <ExamplesSection locale={locale} />
       <HistorySection locale={locale} />
+      <StandardsSection locale={locale} />
       <BugsSection locale={locale} />
       <SeeAlsoSection locale={locale} />
     </>

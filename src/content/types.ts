@@ -48,6 +48,17 @@ export type Skill = {
   quality: Quality
 }
 
+/** One entry of the STANDARDS section — a degree, listed like a conformance standard. */
+export type Education = {
+  degree: Localized
+  institution: string
+  url?: string
+  /** Years only; education reads better coarse. */
+  start: number
+  end: number
+  inProgress?: boolean
+}
+
 export type SkillGroup = {
   label: Localized
   items: readonly Skill[]
@@ -92,6 +103,7 @@ export type UiStrings = {
     options: string
     examples: string
     history: string
+    standards: string
     bugs: string
     seeAlso: string
   }
@@ -129,6 +141,12 @@ export type UiStrings = {
     via: string
     /** Shown when no entries exist yet. */
     empty: string
+  }
+  standards: {
+    lead: string
+    inProgress: string
+    /** The joke line after the list. */
+    note: string
   }
   bugs: {
     lead: string

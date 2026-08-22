@@ -9,6 +9,7 @@ const order: SectionKey[] = [
   'options',
   'examples',
   'history',
+  'standards',
   'bugs',
   'seeAlso',
 ]

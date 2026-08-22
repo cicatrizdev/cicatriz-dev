@@ -24,6 +24,7 @@ export const pt = {
     options: 'Opções',
     examples: 'Exemplos',
     history: 'Histórico',
+    standards: 'Padrões',
     bugs: 'Bugs',
     seeAlso: 'Veja também',
   },
@@ -67,6 +68,11 @@ export const pt = {
     present: 'atual',
     via: 'via',
     empty: 'O histórico ainda está sendo escrito.',
+  },
+  standards: {
+    lead: 'cicatriz está em conformidade com os seguintes padrões:',
+    inProgress: 'em andamento',
+    note: 'A conformidade com metalcore(7) é voluntária e contínua.',
   },
   bugs: {
     lead: 'Reporte bugs, ideias de projeto, pedidos de addon e de mentoria pelo formulário abaixo, ou escreva para',

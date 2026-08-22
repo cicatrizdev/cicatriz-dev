@@ -304,6 +304,21 @@
   margin: var(--space-1) 0 0;
 }
 
+/* STANDARDS */
+.standards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.standards li + li {
+  margin-top: var(--space-2);
+}
+
+.standard {
+  font-weight: 600;
+}
+
 /* SEE ALSO */
 .seeAlso {
   list-style: none;

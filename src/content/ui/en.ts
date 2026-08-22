@@ -24,6 +24,7 @@ export const en = {
     options: 'Options',
     examples: 'Examples',
     history: 'History',
+    standards: 'Standards',
     bugs: 'Bugs',
     seeAlso: 'See also',
   },
@@ -66,6 +67,11 @@ export const en = {
     present: 'present',
     via: 'via',
     empty: 'History is still being written.',
+  },
+  standards: {
+    lead: 'cicatriz conforms to the following standards:',
+    inProgress: 'in progress',
+    note: 'Conformance to metalcore(7) is voluntary and ongoing.',
   },
   bugs: {
     lead: 'Report bugs, project ideas, addon requests and mentorship requests with the form below, or write to',

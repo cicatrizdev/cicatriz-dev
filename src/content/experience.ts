@@ -15,8 +15,8 @@ export const experience: readonly Experience[] = [
     start: '2021-10',
     end: null,
     summary: {
-      en: 'Currently placed with Cosm: web and mobile products in TypeScript (React, React Native, Next.js) for a team across three time zones — testing at 85%+ coverage, performance work and state architecture included.',
-      pt: 'Atualmente alocado na Cosm: produtos web e mobile em TypeScript (React, React Native, Next.js) para um time em três fusos — com testes acima de 85% de cobertura, performance e arquitetura de estado no pacote.',
+      en: 'Placed with Cosm from the start: web and mobile products in TypeScript (React, React Native, Next.js) for a team across three time zones — testing at 85%+ coverage, performance work and state architecture included.',
+      pt: 'Alocado na Cosm desde o início: produtos web e mobile em TypeScript (React, React Native, Next.js) para um time em três fusos — com testes acima de 85% de cobertura, performance e arquitetura de estado no pacote.',
     },
   },
   {

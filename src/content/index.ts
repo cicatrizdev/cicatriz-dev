@@ -5,6 +5,7 @@ import { pt } from '@/content/ui/pt'
 import { services } from '@/content/services'
 import { projects } from '@/content/projects'
 import { experience } from '@/content/experience'
+import { education } from '@/content/education'
 import { skills } from '@/content/skills'
 import { site } from '@/content/site'
 
@@ -14,7 +15,7 @@ export function getUi(locale: Locale): UiStrings {
   return ui[locale]
 }
 
-export { site, services, projects, experience, skills }
+export { site, services, projects, experience, education, skills }
 
 /** `cicatriz [--build <web|mobile>] [--consult <team>] [--mentor <dev>]` */
 export function synopsisUsage(): string {
@@ -29,6 +30,7 @@ export const sectionIds = {
   options: 'options',
   examples: 'examples',
   history: 'history',
+  standards: 'standards',
   bugs: 'bugs',
   seeAlso: 'see-also',
 } as const
