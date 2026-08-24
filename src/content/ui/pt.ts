@@ -121,6 +121,11 @@ export const pt = {
   seeAlso: {
     items: [
       {
+        label: 'stoic.log(7)',
+        href: 'https://log.cicatriz.dev/pt',
+        description: 'ensaios sobre estoicismo aplicado a construir software',
+      },
+      {
         label: 'npx cicatriz',
         href: 'https://www.npmjs.com/package/cicatriz',
         description: 'este manual, no seu terminal',
