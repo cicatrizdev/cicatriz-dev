@@ -110,6 +110,7 @@ export const pt = {
         forbidden: 'Requisição recusada.',
         too_large: 'Mensagem grande demais.',
         rate_limited: 'Muitas mensagens. Tente de novo em alguns minutos.',
+        captcha: 'Não deu pra confirmar que você é humano. Tente de novo.',
         send_failed:
           'Falha na entrega. Tente de novo ou escreva para contato@cicatriz.dev.',
         unavailable: 'O formulário está fora do ar no momento.',

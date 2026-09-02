@@ -7,6 +7,7 @@ Source of [cicatriz.dev](https://cicatriz.dev) — the personal site of Pedro "C
 - [Next.js](https://nextjs.org) (App Router, React 19, TypeScript) deployed on Vercel
 - CSS Modules + custom properties (`src/styles/tokens.css`) — light "paper" and dark "phosphor" themes
 - [Resend](https://resend.com) for the contact form (`/api/contact`)
+- [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) as the human check on that form
 - No UI kit, no icon library, no CSS framework
 
 ## Editing the site
@@ -66,7 +67,9 @@ Source in `cli/`, bundled by `npm run cli:build` (esbuild, content baked in). Pu
 
 ## Deploy
 
-Pushes to `master` deploy to production on Vercel. Required environment variables: `RESEND_API_KEY`, optionally `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` (see `.env.example`).
+Pushes to `master` deploy to production on Vercel. Required environment variables: `RESEND_API_KEY`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`; optionally `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` (see `.env.example`).
+
+Create a Turnstile widget at [the Cloudflare dashboard](https://dash.cloudflare.com/?to=/:account/turnstile) for `cicatriz.dev` (managed mode), then set both keys on the Vercel project. Dummy keys in `.env.example` always pass and are for local use only.
 
 ## License
 

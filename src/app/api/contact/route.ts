@@ -4,10 +4,11 @@ import { isLocale, defaultLocale } from '@/lib/i18n'
 import { contactSchema, fieldErrors, LIMITS } from '@/lib/contact/schema'
 import { checkRateLimit, clientKey } from '@/lib/contact/rate-limit'
 import { sendContact } from '@/lib/contact/send'
+import { turnstileToken, verifyTurnstile } from '@/lib/contact/turnstile'
 
 /**
- * Same-origin check for browsers that send an Origin header: the origin must be
- * this very deployment (production host, preview host or localhost).
+ * Same-origin check. Origin is required: fetch() and modern form POSTs always
+ * send it; curl-to-the-API spam typically does not.
  */
 function originAllowed(request: NextRequest, origin: string): boolean {
   const proto =
@@ -70,7 +71,7 @@ function html(status: number, title: string, body: string, backHref: string) {
 
 export async function POST(request: NextRequest) {
   const origin = request.headers.get('origin')
-  if (origin && !originAllowed(request, origin)) {
+  if (!origin || !originAllowed(request, origin)) {
     return json({ ok: false, error: 'forbidden' }, 403)
   }
 
@@ -86,19 +87,22 @@ export async function POST(request: NextRequest) {
   const back = `/${locale}#bugs`
 
   // Honeypot + fill-time check: pretend success, do nothing.
+  // JSON must carry startedAt — omitting it is how API spam skips the clock.
   const website = typeof data.website === 'string' ? data.website.trim() : ''
   const startedAt = Number(data.startedAt)
+  const hasStart = Number.isFinite(startedAt) && startedAt > 0
   const tooFast =
-    Number.isFinite(startedAt) &&
-    startedAt > 0 &&
-    Date.now() - startedAt < LIMITS.minFillMs
+    kind === 'json'
+      ? !hasStart || Date.now() - startedAt < LIMITS.minFillMs
+      : hasStart && Date.now() - startedAt < LIMITS.minFillMs
   if (website || tooFast) {
     return kind === 'form'
       ? NextResponse.redirect(new URL(`/${locale}/sent`, request.url), 303)
       : json({ ok: true }, 200)
   }
 
-  const limit = checkRateLimit(clientKey(request.headers))
+  const ip = clientKey(request.headers)
+  const limit = checkRateLimit(ip)
   if (!limit.ok) {
     const headers = { 'retry-after': String(limit.retryAfterSeconds) }
     return kind === 'form'
@@ -119,6 +123,23 @@ export async function POST(request: NextRequest) {
         )
   }
 
+  const challenge = await verifyTurnstile(turnstileToken(data), ip)
+  if (challenge === 'failed') {
+    return kind === 'form'
+      ? html(
+          400,
+          '400 Bad Request',
+          `Could not verify this request. Email ${site.email} directly.`,
+          back
+        )
+      : json({ ok: false, error: 'captcha' }, 400)
+  }
+  if (challenge === 'unavailable') {
+    return kind === 'form'
+      ? html(503, '503 unavailable', `Email ${site.email} directly.`, back)
+      : json({ ok: false, error: 'unavailable' }, 503)
+  }
+
   const result = contactSchema.safeParse(data)
   if (!result.success) {
     const fields = fieldErrors(result.error, data)
@@ -133,7 +154,7 @@ export async function POST(request: NextRequest) {
   }
 
   const sent = await sendContact(result.data, {
-    ip: clientKey(request.headers),
+    ip,
     userAgent: request.headers.get('user-agent') ?? '',
   })
 

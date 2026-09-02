@@ -84,6 +84,14 @@ textarea.input {
   overflow: hidden;
 }
 
+.turnstile {
+  min-height: 65px;
+}
+
+.turnstile iframe {
+  display: block;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;

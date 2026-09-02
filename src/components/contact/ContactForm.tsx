@@ -5,6 +5,7 @@ import type { Locale } from '@/lib/i18n'
 import type { ContactStatusCode, UiStrings } from '@/content/types'
 import type { FieldErrors } from '@/lib/contact/schema'
 import { TOPIC_SELECT_ID } from './RequestLink'
+import { Turnstile } from './Turnstile'
 import styles from './ContactForm.module.css'
 
 type Strings = UiStrings['bugs']['form']
@@ -28,12 +29,16 @@ type Props = {
 }
 
 const LIMITS = { name: 100, email: 200, messageMin: 10, messageMax: 5000 }
+const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ''
 
 export function ContactForm({ locale, strings, email, topics }: Props) {
   const id = useId()
   const [status, setStatus] = useState<Status>({ kind: 'idle' })
   /** When the form became interactive; sent along so the server can spot instant (bot) submissions. */
   const startedAt = useRef<number | null>(null)
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
+  /** Bump after each attempt so Turnstile mints a fresh single-use token. */
+  const [challenge, setChallenge] = useState(0)
 
   useEffect(() => {
     startedAt.current = Date.now()
@@ -41,6 +46,10 @@ export function ContactForm({ locale, strings, email, topics }: Props) {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (siteKey && !turnstileToken) {
+      setStatus({ kind: 'error', code: 'captcha' })
+      return
+    }
     const form = event.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
     setStatus({ kind: 'sending' })
@@ -52,6 +61,7 @@ export function ContactForm({ locale, strings, email, topics }: Props) {
           ...data,
           locale,
           startedAt: startedAt.current ?? undefined,
+          turnstileToken: turnstileToken || undefined,
         }),
       })
       const body = (await res.json().catch(() => ({}))) as {
@@ -62,8 +72,11 @@ export function ContactForm({ locale, strings, email, topics }: Props) {
       }
       if (res.ok && body.ok) {
         form.reset()
+        setTurnstileToken(null)
         setStatus({ kind: 'sent' })
       } else {
+        setChallenge((n) => n + 1)
+        setTurnstileToken(null)
         setStatus({
           kind: 'error',
           code: body.error ?? 'send_failed',
@@ -72,6 +85,8 @@ export function ContactForm({ locale, strings, email, topics }: Props) {
         })
       }
     } catch {
+      setChallenge((n) => n + 1)
+      setTurnstileToken(null)
       setStatus({ kind: 'error', code: 'network' })
     }
   }
@@ -92,6 +107,8 @@ export function ContactForm({ locale, strings, email, topics }: Props) {
           className={styles.button}
           onClick={() => {
             startedAt.current = Date.now()
+            setTurnstileToken(null)
+            setChallenge((n) => n + 1)
             setStatus({ kind: 'idle' })
           }}
         >
@@ -196,6 +213,15 @@ export function ContactForm({ locale, strings, email, topics }: Props) {
           rows: 5,
         }}
       />
+
+      {siteKey ? (
+        <Turnstile
+          key={challenge}
+          siteKey={siteKey}
+          locale={locale}
+          onToken={setTurnstileToken}
+        />
+      ) : null}
 
       <div className={styles.actions}>
         <button type="submit" className={styles.button} disabled={sending}>

@@ -2,7 +2,8 @@
  * Best-effort, per-instance rate limiter. On Vercel (Fluid Compute) a warm
  * function instance lives for minutes to hours and is shared across requests,
  * so this catches the common abuse case with zero infrastructure. Cold starts
- * reset it — acceptable: the honeypot and Resend's own quota bound the damage.
+ * reset it — acceptable: Turnstile, the honeypot and Resend's own quota bound
+ * the damage.
  */
 type Bucket = { count: number; resetAt: number }
 

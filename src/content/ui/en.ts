@@ -109,6 +109,7 @@ export const en = {
         forbidden: 'Request refused.',
         too_large: 'Message too large.',
         rate_limited: 'Too many messages. Try again in a few minutes.',
+        captcha: 'Could not verify you are human. Try again.',
         send_failed:
           'Delivery failed. Try again, or email contato@cicatriz.dev.',
         unavailable: 'The form is offline right now.',

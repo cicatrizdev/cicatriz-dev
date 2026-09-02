@@ -26,7 +26,7 @@ export const contactSchema = z.object({
   topic: z.enum(topicIds).default('other'),
   /** Honeypot — must stay empty. */
   website: z.string().optional(),
-  /** Epoch ms when the form was rendered; set by JS only. */
+  /** Epoch ms when the form was rendered; set by JS only. JSON posts that omit it are dropped as bots. */
   startedAt: z.coerce.number().optional(),
 })
 

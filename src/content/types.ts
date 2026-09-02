@@ -73,6 +73,7 @@ export type ContactStatusCode =
   | 'forbidden'
   | 'too_large'
   | 'rate_limited'
+  | 'captcha'
   | 'send_failed'
   | 'unavailable'
   | 'network'
