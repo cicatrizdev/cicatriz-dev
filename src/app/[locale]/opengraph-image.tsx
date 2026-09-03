@@ -90,7 +90,40 @@ export default async function Image({
           paddingBottom: 24,
         }}
       >
-        <span style={{ color: colors.fg, fontWeight: 700 }}>{title}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <svg width={36} height={36} viewBox="0 0 64 64">
+            <path
+              d="M14 18 L29 32 L14 46"
+              fill="none"
+              stroke={colors.fg}
+              strokeWidth={6}
+              strokeLinecap="square"
+              strokeLinejoin="miter"
+            />
+            <path
+              d="M36 45 L54 45"
+              fill="none"
+              stroke={colors.accent}
+              strokeWidth={6}
+              strokeLinecap="square"
+            />
+            <path
+              d="M41 37 L41 53"
+              fill="none"
+              stroke={colors.accent}
+              strokeWidth={3}
+              strokeLinecap="square"
+            />
+            <path
+              d="M49 37 L49 53"
+              fill="none"
+              stroke={colors.accent}
+              strokeWidth={3}
+              strokeLinecap="square"
+            />
+          </svg>
+          <span style={{ color: colors.fg, fontWeight: 700 }}>{title}</span>
+        </div>
         <span>{ui.chrome.manual}</span>
         <span style={{ color: colors.fg, fontWeight: 700 }}>{title}</span>
       </div>
