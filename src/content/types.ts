@@ -41,12 +41,13 @@ export type Experience = {
   summary?: Localized
 }
 
-/** WoW item quality, used to encode how deep a skill goes. */
-export type Quality = 'legendary' | 'epic' | 'rare' | 'uncommon' | 'common'
+/** man(7) font used to encode how deep a skill goes. */
+export const manFonts = ['bold', 'underline', 'roman', 'dim'] as const
+export type ManFont = (typeof manFonts)[number]
 
 export type Skill = {
   name: string
-  quality: Quality
+  font: ManFont
 }
 
 /** One entry of the STANDARDS section — a degree, listed like a conformance standard. */
@@ -97,10 +98,12 @@ export type UiStrings = {
     sourceLink: string
     /** Footer middle cell label, e.g. "built". */
     built: string
-    /** The WoW `/played` readout in the footer. */
-    played: {
+    /** The `uptime` readout in the footer. */
+    uptime: {
+      /** Prefix of the career total, e.g. "up". */
       total: string
-      level: string
+      /** Label of time in the current role, e.g. "this job". */
+      current: string
       years: [string, string]
       months: [string, string]
     }
@@ -128,9 +131,9 @@ export type UiStrings = {
   description: {
     paragraphs: readonly string[]
     skillsLead: string
-    /** Explains the item-quality colors of the stack tags. */
-    qualityLegend: string
-    quality: Record<Quality, string>
+    /** Explains the man(7) fonts of the stack tags. */
+    fontLegend: string
+    font: Record<ManFont, string>
   }
   options: {
     lead: string
@@ -186,7 +189,5 @@ export type UiStrings = {
     title: string
     body: string
     back: string
-    /** The WoW UI error line. */
-    flavor: string
   }
 }

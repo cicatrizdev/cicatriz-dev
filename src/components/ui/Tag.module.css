@@ -14,22 +14,19 @@
   color: var(--dim);
 }
 
-.legendary {
-  color: var(--q-legendary);
+.bold {
+  font-weight: 700;
 }
 
-.epic {
-  color: var(--q-epic);
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
-.rare {
-  color: var(--q-rare);
+.roman {
+  font-weight: 400;
 }
 
-.uncommon {
-  color: var(--q-uncommon);
-}
-
-.common {
-  color: var(--q-common);
+.dim {
+  color: var(--dim);
 }

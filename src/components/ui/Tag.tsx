@@ -1,20 +1,19 @@
 import type { ReactNode } from 'react'
-import type { Quality } from '@/content/types'
+import type { ManFont } from '@/content/types'
 import styles from './Tag.module.css'
 
 type Props = {
   children: ReactNode
-  /** Colors the tag like a WoW item of that quality. */
-  quality?: Quality
+  /** man(7) font that encodes how deep a skill goes. */
+  font?: ManFont
   title?: string
 }
 
 /** `[label]` — a bracketed inline token, the man page's idea of a chip. */
-export function Tag({ children, quality, title }: Props) {
-  const className = quality ? `${styles.tag} ${styles[quality]}` : styles.tag
+export function Tag({ children, font, title }: Props) {
   return (
-    <span className={className} title={title}>
-      {children}
+    <span className={styles.tag} title={title}>
+      <span className={font ? styles[font] : undefined}>{children}</span>
     </span>
   )
 }

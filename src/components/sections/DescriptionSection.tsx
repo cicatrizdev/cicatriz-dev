@@ -1,4 +1,5 @@
 import type { Locale } from '@/lib/i18n'
+import { manFonts } from '@/content/types'
 import { skills, getUi, sectionIds } from '@/content'
 import { Section } from '@/components/layout/Section'
 import { Tag } from '@/components/ui/Tag'
@@ -20,8 +21,8 @@ export function DescriptionSection({ locale }: { locale: Locale }) {
               {group.items.map((item) => (
                 <Tag
                   key={item.name}
-                  quality={item.quality}
-                  title={ui.description.quality[item.quality]}
+                  font={item.font}
+                  title={ui.description.font[item.font]}
                 >
                   {item.name}
                 </Tag>
@@ -31,11 +32,10 @@ export function DescriptionSection({ locale }: { locale: Locale }) {
         ))}
       </dl>
       <p className={s.legend}>
-        {ui.description.qualityLegend}{' '}
-        {(['legendary', 'epic', 'rare', 'uncommon'] as const).map((quality) => (
-          <span key={quality} className={s.legendItem}>
-            <Tag quality={quality}>{quality}</Tag>{' '}
-            {ui.description.quality[quality]}
+        {ui.description.fontLegend}{' '}
+        {manFonts.map((font) => (
+          <span key={font} className={s.legendItem}>
+            <Tag font={font}>{font}</Tag> {ui.description.font[font]}
           </span>
         ))}
       </p>

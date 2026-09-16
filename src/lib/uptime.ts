@@ -11,13 +11,13 @@ export function monthsBetween(
   return { years: Math.floor(total / 12), months: total % 12 }
 }
 
-/** Earliest start across the whole history: the character's creation date. */
+/** Earliest start across the whole history. */
 export function careerStart(): string {
   return experience.map((job) => job.start).sort()[0]
 }
 
-/** Start of the current "level": the earliest still-ongoing role. */
-export function currentLevelStart(): string | null {
+/** Start of the current job: the earliest still-ongoing role. */
+export function currentJobStart(): string | null {
   const ongoing = experience
     .filter((job) => job.end === null)
     .map((job) => job.start)

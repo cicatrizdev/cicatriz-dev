@@ -17,7 +17,7 @@ export function getUi(locale: Locale): UiStrings {
 
 export { site, services, projects, experience, education, skills }
 
-/** `cicatriz [--build <web|mobile>] [--consult <team>] [--mentor <dev>]` */
+/** `cicatriz [--build <web|mobile|api>] [--consult <team>] [--mentor <dev>]` */
 export function synopsisUsage(): string {
   const opts = services.map((s) => `[${s.flag}${s.arg ? ` ${s.arg}` : ''}]`)
   return `${site.command} ${opts.join(' ')}`
