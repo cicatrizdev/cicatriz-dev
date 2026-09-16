@@ -13,8 +13,8 @@ import {
   synopsisUsage,
 } from '@/content'
 import { isLocale, defaultLocale, type Locale } from '@/lib/i18n'
-import type { Quality } from '@/content/types'
-import { careerStart, currentLevelStart, monthsBetween } from '@/lib/played'
+import { manFonts, type ManFont } from '@/content/types'
+import { careerStart, currentJobStart, monthsBetween } from '@/lib/uptime'
 
 declare const __VERSION__: string
 declare const __BUILD_DATE__: string
@@ -83,13 +83,12 @@ function makeStyle(on: boolean) {
     ul: wrap('\x1b[4m'),
     accent: wrap('\x1b[38;5;214m'),
     ok: wrap('\x1b[38;5;71m'),
-    quality: {
-      legendary: wrap('\x1b[38;5;208m'),
-      epic: wrap('\x1b[38;5;135m'),
-      rare: wrap('\x1b[38;5;33m'),
-      uncommon: wrap('\x1b[38;5;46m'),
-      common: (s: string) => s,
-    } satisfies Record<Quality, (s: string) => string>,
+    font: {
+      bold: wrap('\x1b[1m'),
+      underline: wrap('\x1b[4m'),
+      roman: (s: string) => s,
+      dim: wrap('\x1b[2m'),
+    } satisfies Record<ManFont, (s: string) => string>,
   }
 }
 
@@ -166,8 +165,7 @@ function render(args: Args): string {
     const labelWidth = Math.max(...skills.map((g) => g.label[L].length)) + 2
     for (const group of skills) {
       const tags = group.items.map(
-        (item) =>
-          `${st.dim('[')}${st.quality[item.quality](item.name)}${st.dim(']')}`
+        (item) => `${st.dim('[')}${st.font[item.font](item.name)}${st.dim(']')}`
       )
       let line = ' '.repeat(INDENT) + pad(st.dim(group.label[L]), labelWidth)
       const cont = ' '.repeat(INDENT + labelWidth)
@@ -183,15 +181,15 @@ function render(args: Args): string {
       }
       out.push(line)
     }
-    const legend = (['legendary', 'epic', 'rare', 'uncommon'] as const)
+    const legend = manFonts
       .map(
-        (q) =>
-          `${st.dim('[')}${st.quality[q](q)}${st.dim(']')} ${ui.description.quality[q]}`
+        (f) =>
+          `${st.dim('[')}${st.font[f](f)}${st.dim(']')} ${ui.description.font[f]}`
       )
       .join('  ')
     out.push(
       '',
-      ...wrap(`${st.dim(ui.description.qualityLegend)} ${legend}`, INDENT)
+      ...wrap(`${st.dim(ui.description.fontLegend)} ${legend}`, INDENT)
     )
   }
 
@@ -242,8 +240,8 @@ function render(args: Args): string {
   H(ui.sections.bugs)
   const bugsLine =
     L === 'pt'
-      ? `Reporte bugs, ideias de projeto, pedidos de addon ou de mentoria para ${st.ul(site.email)} — ou use o formulário em ${st.dim(`${site.url}/pt#bugs`)}.`
-      : `Report bugs, project ideas, addon or mentorship requests to ${st.ul(site.email)} — or use the form at ${st.dim(`${site.url}/en#bugs`)}.`
+      ? `Reporte bugs, ideias de projeto ou pedidos de mentoria para ${st.ul(site.email)} — ou use o formulário em ${st.dim(`${site.url}/pt#bugs`)}.`
+      : `Report bugs, project ideas or mentorship requests to ${st.ul(site.email)} — or use the form at ${st.dim(`${site.url}/en#bugs`)}.`
   P(bugsLine)
 
   if (!partial) {
@@ -260,7 +258,7 @@ function render(args: Args): string {
     )
 
     const now = new Date()
-    const words = ui.chrome.played
+    const words = ui.chrome.uptime
     const fmt = ({ years, months }: { years: number; months: number }) => {
       const parts: string[] = []
       if (years) parts.push(`${years} ${words.years[years === 1 ? 0 : 1]}`)
@@ -268,16 +266,16 @@ function render(args: Args): string {
         parts.push(`${months} ${words.months[months === 1 ? 0 : 1]}`)
       return parts.join(', ')
     }
-    out.push('', ' '.repeat(INDENT) + `${st.accent('/')}played`)
+    out.push('', ' '.repeat(INDENT) + `${st.accent('$')} uptime`)
     out.push(
       ' '.repeat(INDENT) +
-        `${st.dim(words.total + ':')} ${st.accent(fmt(monthsBetween(careerStart(), now)))}`
+        `${st.dim(words.total)} ${fmt(monthsBetween(careerStart(), now))}`
     )
-    const level = currentLevelStart()
-    if (level)
+    const current = currentJobStart()
+    if (current)
       out.push(
         ' '.repeat(INDENT) +
-          `${st.dim(words.level + ':')} ${st.accent(fmt(monthsBetween(level, now)))}`
+          `${st.dim(words.current + ':')} ${fmt(monthsBetween(current, now))}`
       )
   }
 

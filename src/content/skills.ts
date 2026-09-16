@@ -1,86 +1,76 @@
-import type { Quality, Skill, SkillGroup } from '@/content/types'
+import type { ManFont, Skill, SkillGroup } from '@/content/types'
 
 const q =
-  (quality: Quality) =>
-  (name: string): Skill => ({ name, quality })
-const legendary = q('legendary')
-const epic = q('epic')
-const rare = q('rare')
-const uncommon = q('uncommon')
+  (font: ManFont) =>
+  (name: string): Skill => ({ name, font })
+const bold = q('bold')
+const underline = q('underline')
+const roman = q('roman')
+const dim = q('dim')
 
 /**
- * Stack tags under DESCRIPTION, colored by item quality:
- * legendary = specialty, epic = daily use, rare = comfortable, uncommon = familiar.
+ * Stack tags under DESCRIPTION, set in man(7) fonts:
+ * bold = specialty, underline = daily use, roman = comfortable, dim = familiar.
  */
 export const skills: readonly SkillGroup[] = [
   {
     label: { en: 'languages', pt: 'linguagens' },
     items: [
-      legendary('typescript'),
-      legendary('javascript'),
-      rare('python'),
-      rare('go'),
-      rare('java'),
-      rare('lua'),
-      uncommon('rust'),
-      uncommon('swift'),
-      uncommon('kotlin'),
+      bold('typescript'),
+      bold('javascript'),
+      roman('python'),
+      roman('go'),
+      roman('java'),
+      dim('rust'),
+      dim('swift'),
+      dim('kotlin'),
     ],
   },
   {
     label: { en: 'web', pt: 'web' },
     items: [
-      legendary('react'),
-      epic('next.js'),
-      epic('redux'),
-      epic('styled-components'),
-      rare('tailwind'),
+      bold('react'),
+      underline('next.js'),
+      underline('redux'),
+      underline('styled-components'),
+      roman('tailwind'),
     ],
   },
   {
     label: { en: 'mobile', pt: 'mobile' },
-    items: [legendary('react-native'), epic('expo'), rare('flutter')],
+    items: [bold('react-native'), underline('expo'), roman('flutter')],
   },
   {
     label: { en: 'back-end', pt: 'back-end' },
     items: [
-      epic('node.js'),
-      rare('postgres'),
-      rare('mongodb'),
-      rare('supabase'),
-      rare('firebase'),
+      underline('node.js'),
+      roman('postgres'),
+      roman('mongodb'),
+      roman('supabase'),
+      roman('firebase'),
     ],
   },
   {
     label: { en: 'infra', pt: 'infra' },
     items: [
-      epic('vercel'),
-      rare('netlify'),
-      rare('github-actions'),
-      rare('ci/cd'),
+      underline('vercel'),
+      roman('netlify'),
+      roman('github-actions'),
+      roman('ci/cd'),
     ],
   },
   {
     label: { en: 'ai', pt: 'ia' },
-    items: [epic('claude-code'), rare('mcp'), rare('agent-skills')],
-  },
-  {
-    label: { en: 'azeroth', pt: 'azeroth' },
-    items: [
-      rare('macros'),
-      rare('wow-addons'),
-      uncommon('weakauras'),
-      uncommon('wow-api'),
-    ],
+    items: [underline('claude-code'), roman('mcp'), roman('agent-skills')],
   },
   {
     label: { en: 'practice', pt: 'prática' },
     items: [
-      legendary('mentoring'),
-      epic('architecture'),
-      epic('code-review'),
-      rare('testing'),
-      rare('ui-design'),
+      bold('mentoring'),
+      underline('architecture'),
+      underline('code-review'),
+      roman('testing'),
+      roman('ui-design'),
     ],
   },
 ]

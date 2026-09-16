@@ -16,16 +16,4 @@ export const draftProjects: readonly Project[] = [
       pt: 'Esta própria página: uma man page bilíngue feita com Next.js — conteúdo tipado, card social gerado, formulário via Resend, sem UI kit. Leia o código.',
     },
   },
-  {
-    slug: 'classic-addons',
-    name: 'WoW Classic addons',
-    flag: '--addon',
-    repo: site.social.github,
-    status: 'wip',
-    stack: ['Lua', 'WoW API', 'WeakAuras'],
-    summary: {
-      en: 'The first addons, WeakAuras and macro packs for WoW Classic are in the works. They land on GitHub (and CurseForge) as they become usable.',
-      pt: 'Os primeiros addons, WeakAuras e pacotes de macros para WoW Classic estão em produção. Chegam ao GitHub (e ao CurseForge) conforme ficam usáveis.',
-    },
-  },
 ]

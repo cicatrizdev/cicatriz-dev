@@ -7,7 +7,7 @@ npx cicatriz
 Prints the manual page of Pedro "Cicatriz" Mello — software engineer, mentor, occasional riff lord — the same content as [cicatriz.dev](https://cicatriz.dev), rendered like `man`.
 
 ```
-cicatriz [--build <web|mobile|api>] [--consult <team>] [--addon <classic>] [--mentor <dev>]
+cicatriz [--build <web|mobile|api>] [--consult <team>] [--mentor <dev>]
          [--lang en|pt] [--no-color] [--no-pager] [--contact] [--help] [--version]
 ```
 

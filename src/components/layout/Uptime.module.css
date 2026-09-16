@@ -1,4 +1,4 @@
-.played {
+.uptime {
   max-width: calc(var(--measure) + 2 * var(--gutter));
   margin: 0 auto;
   padding: var(--space-6) var(--gutter) 0;
@@ -11,7 +11,7 @@
   color: var(--fg);
 }
 
-.slash {
+.prompt {
   color: var(--accent);
   font-weight: 700;
 }
@@ -20,7 +20,6 @@
   margin: 0;
 }
 
-/* WoW prints /played in the system-message yellow; ours is the amber we already own. */
 .value {
-  color: var(--accent);
+  color: var(--fg);
 }
