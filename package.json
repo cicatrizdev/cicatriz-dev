@@ -15,10 +15,10 @@
     "cli": "node scripts/build-cli.mjs && node cli/dist/cicatriz.js"
   },
   "dependencies": {
-    "@next/third-parties": "^16.3.2",
-    "next": "16.3.2",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "@next/third-parties": "^16.3.6",
+    "next": "16.3.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "resend": "^6.21.0",
     "zod": "^4.4.3"
   },
@@ -29,7 +29,7 @@
     "@types/react-dom": "^19",
     "esbuild": "^0.28.2",
     "eslint": "^9",
-    "eslint-config-next": "16.3.2",
+    "eslint-config-next": "16.3.6",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
     "typescript": "^5"
