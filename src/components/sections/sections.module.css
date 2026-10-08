@@ -17,8 +17,17 @@
 /* NAME */
 .name {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-4);
+}
+
+.nameCopy {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.nameCopy p {
+  margin: 0;
 }
 
 .avatar {
@@ -39,6 +48,16 @@
 .cmd {
   font-weight: 600;
   color: var(--fg);
+}
+
+.pitch {
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+
+.proof {
+  color: var(--dim);
+  font-size: var(--text-sm);
 }
 
 /* SYNOPSIS */
@@ -180,12 +199,6 @@
   font-weight: 600;
 }
 
-.optTitle::before {
-  content: '— ';
-  color: var(--dim);
-  font-weight: 400;
-}
-
 .optBody {
   margin: var(--space-1) 0 0 var(--indent);
 }
@@ -199,12 +212,35 @@
   font-size: var(--text-sm);
 }
 
+.ctas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cta + .cta {
+  margin-top: var(--space-2);
+}
+
 .invoke {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-4);
   color: var(--dim);
   text-decoration: none;
 }
 
 .invoke:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.ctaText {
+  color: var(--fg);
+}
+
+.invoke:hover .ctaText {
   color: var(--accent);
   text-decoration: underline dotted;
 }

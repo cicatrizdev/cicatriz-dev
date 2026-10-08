@@ -4,7 +4,7 @@ export const en = {
   meta: {
     title: 'cicatriz(1) — Pedro Mello',
     description:
-      'Manual page for Pedro "Cicatriz" Mello: software engineer in Brazil working across the stack — web, mobile and back-end, TypeScript at the core — consulting with teams and mentoring developers.',
+      'Pedro Mello (Cicatriz) — software engineer in Brazil. Web and mobile development, consulting for teams, and mentorship for developers.',
     ogAlt: 'cicatriz(1) — Pedro Mello, software engineer. A man page.',
   },
   chrome: {
@@ -34,8 +34,28 @@ export const en = {
     bugs: 'Bugs',
     seeAlso: 'See also',
   },
+  page: {
+    sections: {
+      name: 'Name',
+      synopsis: 'Synopsis',
+      description: 'About',
+      options: 'Services',
+      examples: 'Work',
+      history: 'History',
+      standards: 'Education',
+      bugs: 'Contact',
+      seeAlso: 'See also',
+    },
+    optionsLead:
+      'Three ways of working together. The prompt under each one opens the form on the right subject.',
+    historyLead: 'X-Team, Alura, Riachuelo — most recent first.',
+  },
   name: {
-    summary: 'Pedro Mello, software engineer, mentor, occasional riff lord.',
+    summary:
+      'Pedro Mello, software engineer. Products, consulting, and mentorship.',
+    pitch:
+      'From the first screen to production — web, mobile and back-end. I work with founders, product and engineering teams, solo or alongside the team you already have.',
+    proof: 'X-Team · Alura · Riachuelo',
     avatarAlt: 'Portrait of Pedro Mello',
   },
   synopsis: {
@@ -44,9 +64,8 @@ export const en = {
   description: {
     paragraphs: [
       'Pedro Mello (a.k.a. Cicatriz) is a self-taught software engineer based in Brazil. He works across the whole stack — product front-ends, mobile apps, APIs and the tooling that holds them together — and has shipped enough of each to prefer boring solutions that reach production.',
-      'His specialty is TypeScript end to end: React and Next.js on the web, React Native on mobile, Node.js behind them. Around that core he goes wherever the problem lives: Python and Rust for tooling, Swift and Kotlin when native is the right call, and the cloud and CI plumbing that puts it all online.',
-      'He is always learning something new and enjoys sharing it even more. Helping developers through their first steps — and their next ones — is the part of the job he would do for free.',
-      'Off the clock he is usually somewhere in Azeroth.',
+      'His specialty is TypeScript end to end: React and Next.js on the web, React Native on mobile, Node.js behind them. Around that core he goes wherever the problem lives.',
+      'He is always learning, and enjoys teaching even more. Off the clock he is usually somewhere in Azeroth.',
     ],
     skillsLead: 'Stack',
     fontLegend: 'Fonts:',
@@ -58,11 +77,10 @@ export const en = {
     },
   },
   options: {
-    lead: 'Each option is a service. To invoke one, see BUGS — or use the prompt under it.',
-    request: 'Request',
+    lead: 'Each option is a service. To invoke one, see BUGS.',
   },
   examples: {
-    lead: 'Client work stays under NDA — see',
+    lead: 'What can be shown. Client work under NDA is named by the company — the full timeline is in',
     visit: 'open',
     source: 'source',
     wip: 'in progress',
@@ -79,7 +97,7 @@ export const en = {
     note: 'Conformance to metalcore(7) is voluntary and ongoing.',
   },
   bugs: {
-    lead: 'Report bugs, project ideas and mentorship requests with the form below, or write to',
+    lead: 'A project, a consult, mentorship, or a hello. Form below, or write to',
     form: {
       topic: 'Regarding',
       topicOther: 'something else',
@@ -88,7 +106,8 @@ export const en = {
       email: 'Your email',
       emailPlaceholder: 'edson@example.com',
       message: 'Message',
-      messagePlaceholder: "Hey! Let's drink a beer 🍺",
+      messagePlaceholder:
+        'Tell me what you need — a product, a consult, mentorship, or a hello.',
       send: 'send',
       sending: 'sending…',
       sentTitle: '200 OK',

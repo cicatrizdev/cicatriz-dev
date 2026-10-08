@@ -1,5 +1,5 @@
 import type { Locale } from '@/lib/i18n'
-import { site, projects, getUi, sectionIds } from '@/content'
+import { site, projects, getUi, pageSectionTitle, sectionIds } from '@/content'
 import { langTag } from '@/lib/i18n'
 import { Section } from '@/components/layout/Section'
 import { Tag } from '@/components/ui/Tag'
@@ -9,11 +9,14 @@ export function ExamplesSection({ locale }: { locale: Locale }) {
   const ui = getUi(locale)
   if (projects.length === 0) return null
   return (
-    <Section id={sectionIds.examples} title={ui.sections.examples}>
+    <Section
+      id={sectionIds.examples}
+      title={pageSectionTitle(locale, 'examples')}
+    >
       <p className={s.lead}>
         {ui.examples.lead}{' '}
         <a href={`#${sectionIds.history}`} lang={langTag[locale]}>
-          {ui.sections.history.toUpperCase()}
+          {pageSectionTitle(locale, 'history').toUpperCase()}
         </a>
         .
       </p>

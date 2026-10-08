@@ -8,6 +8,8 @@ export type Service = {
   arg?: string
   title: Localized
   description: Localized
+  /** Human CTA on the website, e.g. "Quero um projeto". */
+  cta: Localized
 }
 
 /** One entry of the EXAMPLES section (a selected project). */
@@ -119,9 +121,32 @@ export type UiStrings = {
     bugs: string
     seeAlso: string
   }
+  /**
+   * Website display copy. The CLI keeps `sections` and the man-page leads;
+   * the site uses these so a visitor can act without speaking Unix.
+   */
+  page: {
+    sections: {
+      name: string
+      synopsis: string
+      description: string
+      options: string
+      examples: string
+      history: string
+      standards: string
+      bugs: string
+      seeAlso: string
+    }
+    optionsLead: string
+    historyLead: string
+  }
   name: {
     /** The one-line summary after the dash: `cicatriz — ...` */
     summary: string
+    /** Selling sentence under the name line, website only. */
+    pitch: string
+    /** Social proof under the pitch, e.g. company names. */
+    proof: string
     avatarAlt: string
   }
   synopsis: {
@@ -137,8 +162,6 @@ export type UiStrings = {
   }
   options: {
     lead: string
-    /** Accessible label prefix of the `$ cicatriz --flag` invocation links. */
-    request: string
   }
   examples: {
     lead: string

@@ -1,12 +1,15 @@
 import type { Locale } from '@/lib/i18n'
-import { getUi, sectionIds } from '@/content'
+import { getUi, pageSectionTitle, sectionIds } from '@/content'
 import { Section } from '@/components/layout/Section'
 import s from './sections.module.css'
 
 export function SeeAlsoSection({ locale }: { locale: Locale }) {
   const ui = getUi(locale)
   return (
-    <Section id={sectionIds.seeAlso} title={ui.sections.seeAlso}>
+    <Section
+      id={sectionIds.seeAlso}
+      title={pageSectionTitle(locale, 'seeAlso')}
+    >
       <ul className={s.seeAlso}>
         {ui.seeAlso.items.map((item) => (
           <li key={item.label}>

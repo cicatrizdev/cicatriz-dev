@@ -1,5 +1,5 @@
 import type { Locale } from '@/lib/i18n'
-import { experience, getUi, sectionIds } from '@/content'
+import { experience, getUi, pageSectionTitle, sectionIds } from '@/content'
 import { Section } from '@/components/layout/Section'
 import s from './sections.module.css'
 
@@ -8,8 +8,11 @@ export function HistorySection({ locale }: { locale: Locale }) {
   // Most recent first; ties keep file order (Array.prototype.sort is stable).
   const entries = [...experience].sort((a, b) => b.start.localeCompare(a.start))
   return (
-    <Section id={sectionIds.history} title={ui.sections.history}>
-      <p className={s.lead}>{ui.history.lead}</p>
+    <Section
+      id={sectionIds.history}
+      title={pageSectionTitle(locale, 'history')}
+    >
+      <p className={s.lead}>{ui.page.historyLead}</p>
       {entries.length === 0 ? (
         <p>{ui.history.empty}</p>
       ) : (

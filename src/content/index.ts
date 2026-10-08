@@ -36,3 +36,20 @@ export const sectionIds = {
 } as const
 
 export type SectionKey = keyof typeof sectionIds
+
+/** Website reading order: offer, proof, then personality. */
+export const pageSectionOrder: readonly SectionKey[] = [
+  'name',
+  'synopsis',
+  'options',
+  'examples',
+  'history',
+  'description',
+  'standards',
+  'bugs',
+  'seeAlso',
+]
+
+export function pageSectionTitle(locale: Locale, key: SectionKey): string {
+  return getUi(locale).page.sections[key]
+}
