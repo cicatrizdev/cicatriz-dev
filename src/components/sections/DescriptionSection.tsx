@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n'
 import { manFonts } from '@/content/types'
-import { skills, getUi, sectionIds } from '@/content'
+import { skills, getUi, pageSectionTitle, sectionIds } from '@/content'
 import { Section } from '@/components/layout/Section'
 import { Tag } from '@/components/ui/Tag'
 import s from './sections.module.css'
@@ -8,7 +8,10 @@ import s from './sections.module.css'
 export function DescriptionSection({ locale }: { locale: Locale }) {
   const ui = getUi(locale)
   return (
-    <Section id={sectionIds.description} title={ui.sections.description}>
+    <Section
+      id={sectionIds.description}
+      title={pageSectionTitle(locale, 'description')}
+    >
       {ui.description.paragraphs.map((text) => (
         <p key={text.slice(0, 24)}>{text}</p>
       ))}

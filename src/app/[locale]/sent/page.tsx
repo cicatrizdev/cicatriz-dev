@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { isLocale } from '@/lib/i18n'
-import { getUi, site } from '@/content'
+import { getUi, pageSectionTitle, site } from '@/content'
 import { Section } from '@/components/layout/Section'
 import styles from './page.module.css'
 
@@ -15,7 +15,7 @@ export default async function SentPage({ params }: Props) {
   if (!isLocale(locale)) notFound()
   const ui = getUi(locale)
   return (
-    <Section id="sent" title={ui.sections.bugs}>
+    <Section id="sent" title={pageSectionTitle(locale, 'bugs')}>
       <p className={styles.line}>
         <span className={styles.prompt} aria-hidden="true">
           ${' '}

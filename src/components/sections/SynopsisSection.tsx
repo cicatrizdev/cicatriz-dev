@@ -1,8 +1,9 @@
 import type { CSSProperties } from 'react'
 import type { Locale } from '@/lib/i18n'
-import { site, services, getUi, sectionIds } from '@/content'
+import { site, services, getUi, pageSectionTitle, sectionIds } from '@/content'
 import { Section } from '@/components/layout/Section'
 import { optionId } from './OptionsSection'
+import { InvokeLink } from './InvokeLink'
 import s from './sections.module.css'
 
 export function SynopsisSection({ locale }: { locale: Locale }) {
@@ -12,7 +13,10 @@ export function SynopsisSection({ locale }: { locale: Locale }) {
     text: `[${svc.flag}${svc.arg ? ` ${svc.arg}` : ''}]`,
   }))
   return (
-    <Section id={sectionIds.synopsis} title={ui.sections.synopsis}>
+    <Section
+      id={sectionIds.synopsis}
+      title={pageSectionTitle(locale, 'synopsis')}
+    >
       <p className={s.usage}>
         <code className={s.usageCmd}>{site.command}</code>
         {options.map((opt, i) => (
@@ -21,7 +25,7 @@ export function SynopsisSection({ locale }: { locale: Locale }) {
             className={s.usageOpt}
             style={{ '--i': i } as CSSProperties}
           >
-            {/* Each token jumps to its entry under OPTIONS. */}
+            {/* Each token jumps to its entry under SERVICES. */}
             <a href={`#${optionId(opt.flag)}`} className={s.usageLink}>
               {opt.text}
             </a>
@@ -31,6 +35,13 @@ export function SynopsisSection({ locale }: { locale: Locale }) {
           </code>
         ))}
       </p>
+      <ul className={s.ctas}>
+        {services.map((svc) => (
+          <li key={svc.flag} className={s.cta}>
+            <InvokeLink locale={locale} service={svc} />
+          </li>
+        ))}
+      </ul>
       <p className={s.note}>{ui.synopsis.note}</p>
     </Section>
   )

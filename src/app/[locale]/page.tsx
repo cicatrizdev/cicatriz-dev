@@ -31,10 +31,10 @@ export default async function Page({ params }: Props) {
       <SectionNav locale={locale} />
       <NameSection locale={locale} />
       <SynopsisSection locale={locale} />
-      <DescriptionSection locale={locale} />
       <OptionsSection locale={locale} />
       <ExamplesSection locale={locale} />
       <HistorySection locale={locale} />
+      <DescriptionSection locale={locale} />
       <StandardsSection locale={locale} />
       <BugsSection locale={locale} />
       <SeeAlsoSection locale={locale} />

@@ -1,5 +1,5 @@
 import type { Locale } from '@/lib/i18n'
-import { education, getUi, sectionIds } from '@/content'
+import { education, getUi, pageSectionTitle, sectionIds } from '@/content'
 import { Section } from '@/components/layout/Section'
 import s from './sections.module.css'
 
@@ -9,7 +9,10 @@ export function StandardsSection({ locale }: { locale: Locale }) {
   if (education.length === 0) return null
   const entries = [...education].sort((a, b) => b.start - a.start)
   return (
-    <Section id={sectionIds.standards} title={ui.sections.standards}>
+    <Section
+      id={sectionIds.standards}
+      title={pageSectionTitle(locale, 'standards')}
+    >
       <p className={s.lead}>{ui.standards.lead}</p>
       <ul className={s.standards}>
         {entries.map((item) => (

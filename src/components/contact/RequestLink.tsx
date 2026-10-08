@@ -12,8 +12,8 @@ type Props = {
 }
 
 /**
- * `$ cicatriz --flag` under each option: a plain anchor to BUGS that also
- * preselects the matching subject in the form. Without JS it still scrolls.
+ * `$ cicatriz --flag` under each option: a plain anchor to the contact form
+ * that also preselects the matching subject. Without JS it still scrolls.
  */
 export function RequestLink({ topic, label, className, children }: Props) {
   return (
